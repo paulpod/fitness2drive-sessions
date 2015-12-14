@@ -1,0 +1,71 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question1 - Your condition
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question1</p>
+<pre class="routes-pre">
+NEXT  >>>  question2
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question2">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Your condition</h1>
+
+				<form action="/ep-flowq1" method="get" class="form" data-parsley-validate>
+
+					<!-- Name of condition -->
+					<div class="form-group">
+						<label class="form-label-bold" for="q1-a1">Enter your condition</label>
+						<p class="form-hint">For example, epilepsy</p>
+
+						<input class="form-control" type="text" id="q1-a1" name="q1answer"
+						value="epilepsy"
+						data-parsley-required
+						data-parsley-errors-container="#custom-parsley-error"
+						data-parsley-error-message="You need to enter a condition">
+
+						<span id="custom-parsley-error"></span>
+					</div><!--  end .form-group  -->
+
+					{{>includes/button-continue}}
+
+					<p>You can't use this service to tell us about more than one condition.</p>
+
+					<p><a id="condition-link" href="https://www.gov.uk/health-conditions-and-driving" rel="external" target="_new">Find out how to</a></p>
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

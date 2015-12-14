@@ -1,0 +1,102 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question18 - Application confirmation
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question19</p>
+<pre class="routes-pre">
+END
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question19">
+			<div class="application-confirmation" style="margin-top:2em">
+				<h1 class="heading-xlarge">✔ Thank you</h1>
+				<h2>The information you have provided has been sent to DVLA for assessment</h2>
+			</div>
+
+			<div class="column-two-thirds">
+
+				<form action="/basic-flow" method="get" class="form">
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					<input type="hidden" name="q5answer" value="{{q5answer}}">
+					<input type="hidden" name="q6answer" value="{{q6answer}}">
+					<input type="hidden" name="q6Aanswer" value="{{q6Aanswer}}">
+					<input type="hidden" name="q7answer" value="{{q7answer}}">
+					<input type="hidden" name="q8answer" value="{{q8answer}}">
+					<input type="hidden" name="q9answer" value="{{q9answer}}">
+					<input type="hidden" name="q10answer" value="{{q10answer}}">
+					<input type="hidden" name="startdate1" value="{{startdate1}}">
+					<input type="hidden" name="enddate1" value="{{enddate1}}">
+					<input type="hidden" name="q11answer" value="{{q11answer}}">
+					<input type="hidden" name="q12answer" value="{{q12answer}}">
+					<input type="hidden" name="q13answer" value="{{q13answer}}">
+					<input type="hidden" name="q14answer" value="{{q14answer}}">
+					<input type="hidden" name="q15Aanswer" value="{{q15Aanswer}}">
+					<input type="hidden" name="q15Banswer" value="{{q15Banswer}}">
+					<input type="hidden" name="q16answer" value="{{q16answer}}">
+					<input type="hidden" name="drname" value="{{drname}}">
+					<input type="hidden" name="surgname" value="{{surgname}}">
+					<input type="hidden" name="drpostcode" value="{{drpostcode}}">
+					<input type="hidden" name="drphone" value="{{drphone}}">
+					{{/vars}}
+
+
+
+					<h2 class="heading-large">What's next?</h2>
+
+					<img src="/public/images/icon-calendar-2x.png" style="float: left;" width="40px" height="40px">
+					<p style="padding-left: 45px; margin-top: 25px !important;">You will receive a letter in the next week to let you know how the assessment is progressing.</p>
+
+					<img src="/public/images/icon-important-2x.png" style="float: left;" width="40px" height="40px">
+					<h3 class="heading-medium" style="padding-left: 45px; margin-top: 25px !important;">Can I drive while enquiries are being made?</h3>
+
+					<p>DVLA cannot confirm your fitness to drive until this assessment is complete. If you wish to continue driving you must be confident that your licence would not be revoked due to your medical condition.</p>
+
+					<p>If you are unsure please seek advice from your Doctor.</p>
+
+					<p><a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/458792/INF188X6_221014.pdf">
+					If you are applying for a driving licence there are other criteria you must meet</a></p>
+
+					<a type="hidden" class="button" name="nextlink" href="https://www.gov.uk/browse/driving">Return to GOV.UK</a>
+					<!-- <input type="hidden" name="nextlink" value="https://www.gov.uk/browse/driving">
+					<input class="button" type="submit" value="Return to GOV.UK"> -->
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

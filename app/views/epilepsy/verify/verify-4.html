@@ -1,0 +1,29 @@
+<!DOCTYPE html> <!--[if lt IE 9]><html class=lte-ie8 lang><![endif]--> <!--[if gt IE 8]><!--><html lang><!--<![endif]--> <head> <meta http-equiv=content-type content="text/html; charset=UTF-8" />
+
+<title>verify4</title>
+
+<script type="text/javascript">(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var e=document,f="appendChild",b=e.createElement("style");b[f](e.createTextNode("@-ms-viewport{width:auto!important}"));e.getElementsByTagName("head")[0][f](b)}})();</script> <!--[if lt IE 9]> <script src="/public/javascripts/ie.js?0.9.1" type="text/javascript"></script> <![endif]--> <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/public/images/apple-touch-icon-152x152.png?0.9.1"> <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/public/images/apple-touch-icon-120x120.png?0.9.1"> <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/public/images/apple-touch-icon-76x76.png?0.9.1"> <link rel="apple-touch-icon-precomposed" href="/public/images/apple-touch-icon-60x60.png?0.9.1"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta property="og:image" content="/public/images/opengraph-image.png?0.9.1"> <!--[if lte IE 8]> <link rel="stylesheet" href="/public/stylesheets/application-oldie.css"> <![endif]--> <!--[if gt IE 8]><!--> <link rel="stylesheet" href="/public/stylesheets/verify/verify_ipd_application.css"> <!--<![endif]--> </head> <body class=""> <script type="text/javascript">document.body.className=((document.body.className)?document.body.className+" js-enabled":"js-enabled");</script> <div id="global-cookie-message"> <div class="outer-block"> <div class="inner-block"> </div> </div> </div> <header role="banner" id="header"> <div class="inner"> <a href="/" id="idp-logo" class="content"> <img src="/public/images/post-office.png" alt=""> </a> <span style="float:right;font-size:16px"> <a href="#">Contact us</a> <a style="display:inline-block;background:#005ea5;color:#fff;padding:10px 14px;margin:0 0 0 30px" href="http://govuk-verify-test.herokuapp.com/view-driving-record/">Back to GOV.UK</a> </span> </div> </header> <main id="page-container" role="main"> <h1 class="heading-xlarge">Security code</h1> <div class="grid-row"> <div class="column-two-thirds"> <div class="inner-block"> <p>We've sent your security code to:</p> <p><strong>07700 900546</strong></p> <p>It may take a minute or so to arrive.</p> <div class="form-group"> <label class="form-label">Security code</label> <input class="form-control" type="text" id="security-code" autocomplete="off"> </div> <div class="form-group"> </div> </div>
+
+
+
+
+			
+	<form action="/basic-flow" method="get" class="form">
+		{{#vars}}
+		<input type="hidden" name="q1answer" value="{{q1answer}}">
+		<input type="hidden" name="q2answer" value="{{q2answer}}">
+		<input type="hidden" name="q3answer" value="{{q3answer}}">
+		<input type="hidden" name="q4answer" value="{{q4answer}}">
+		<input type="hidden" name="q5answer" value="{{q5answer}}">
+		<input type="hidden" name="q6answer" value="{{q6answer}}">
+		{{/vars}}
+		<input type="hidden" name="nextlink" value="verify/verify-5">
+
+		{{>includes/button-continue}}
+	</form>
+
+
+
+
+
+</div> </div> <script> document.getElementById('security-code').focus(); </script </main> <footer id="footer" role="contentinfo"> <div class="inner" style="margin-top:30px"> </body> </html>

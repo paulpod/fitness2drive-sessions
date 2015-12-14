@@ -1,0 +1,85 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	Tell DVLA about your medical condition
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+{{/head}} 
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<main id="content" role="main">
+{{>includes/phase_banner}}
+
+	<div id="notify" class="">
+		<div class="grid-row" style="margin-top:1.5em">
+			<div class="column-two-thirds">
+				<h1 style="margin-top:0.5em;" class="form-title heading-xlarge">
+				Tell DVLA about your medical condition
+				</h1>
+
+				<p>You can use this service to tell DVLA about your medical condition.</p>
+
+				<p>It is a legal requirement to tell DVLA of a medical condition that might affect your driving.</p>
+
+				<div style="padding-top: 0px; padding-bottom: 5px;" class="panel-indent">
+					<h2 class="heading-medium">Don’t worry</h2>
+					<p>Most drivers are allowed to continue driving.</p>
+				</div>
+
+				<h2 class="heading-medium">What you'll need</h2>
+				<ul class="list-bullet" style="margin-bottom: 0;">
+					<li>to be a resident in Great Britain - there is a different process in <a href="http://amdr.herokuapp.com/COA_Direct_v4/Landing_page">Northern Ireland, Isle of Man and the Channel Islands</a>
+					<li>your healthcare professionals' (eg GP, nurse, consultant) details</li>
+				</ul>
+				<br/><br/>
+
+				<div style="">
+					<h2 style="display: inline;">
+					<img src="/public/images/verify-logo-inline.png" style="width: 100px; display: inline; float: left;"/>
+					<strong>GOV.UK</strong>
+					<br/>VERIFY</h2>
+				</div>
+				<br/>
+
+				<p>This service uses GOV.UK Verify to check your identity.</p>
+				<br/>
+
+			</div><!--  end column-two-thirds  -->
+
+			<form action="/basic-flow" method="get" class="form">
+				<input type="hidden" name="nextlink" value="/q1">
+				{{>includes/button-start}}
+			</form>
+
+			<div class="column-third" style=";margin-bottom:0.75em">
+				<nav class="popular-needs">
+
+					<h3 class="heading-medium" style="border-top:10px solid #005ea5;margin-top:1em;padding-top:1em">Driving with a medical condition</h3>
+
+					<ul style="list-style-type: none;">
+						<li style="margin-top: 0.5em;"><a href="https://www.gov.uk/health-conditions-and-driving">Conditions that need to be reported</a></li>
+						<li style="margin-top: 0.5em;"><a href="https://www.gov.uk/driving-licence-categories">Types of driving licences</a></li>
+						<li style="margin-top: 0.5em;"><a href="https://www.gov.uk/giving-up-your-driving-licence">I want to give up my licence</a></li>
+					</ul>
+				</nav>
+			</div><!--  end column-third  -->
+		</div><!--  end grid-row  -->
+	</div><!--  end notify  -->
+</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

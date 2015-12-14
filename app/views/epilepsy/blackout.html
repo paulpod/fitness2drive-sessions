@@ -1,0 +1,43 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	BLACKOUT flow
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+{{/head}}
+
+{{$propositionHeader}}	
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+		{{>includes/button-back}}
+
+		<h1 id="condition-heading" class="heading-xlarge">Blackouts</h1>
+
+		<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<p>You can't use this service yet to tell the DVLA about this condition.</p>
+
+				<p>Find out how to <a id="condition-link" href="https://www.gov.uk/health-conditions-and-driving" rel="external" target="_self">tell DVLA about this condition</a>.</p>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end grid-row  -->
+
+		<!-- <a href="javascript:history.back()">Back</a> -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

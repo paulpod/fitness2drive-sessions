@@ -1,0 +1,157 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question16 - Check your details
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+<style type="text/css">
+	.url { font-size: 10px; }
+	.border-bottom {
+		border-bottom: 1px solid #c0c0c0;
+		margin-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
+	.column-two-thirds p {
+		margin-top: 15px !important;
+		margin-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
+	.grid-row { margin-left: 0px !important; }
+	h2.heading-medium.border-bottom { margin-top: 75px; }
+</style>
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question17</p>
+<pre class="routes-pre">
+NEXT >>> ISSUE F/FEP2
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question17">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Check your details</h1>
+
+				<p>Please check the information that you have provided is correct.</p>
+
+				<form action="/ep-flowq17" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<div class="form-group">
+						<!--  Your condition  -->
+						<h2 class="heading-medium border-bottom">Your condition</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q1 your-condition.html</span-->
+								<p>Your would like to notify us of <strong>{{q1answer}}</strong></p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q2 describe-condition.html</span-->
+								<p>You described your condition as <strong>{{q2answer}}</strong></p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q3 seizure-type.html</span-->
+								<p>You said you've had <strong>{{q3answer}}</strong> seizures</p>
+							</div>
+						</div>
+
+
+
+
+
+						<!--  Alcohol and drugs  -->
+						<h2 class="heading-medium border-bottom">Alcohol and drugs</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q4 seizure-cause.html</span-->
+								<p>You said your seizures <strong>{{q4answer}}</strong> been caused by alcohol or illegal drug misuse</p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q5 alcohol-dependence.html</span-->
+								<p>You said you <strong>{{q5answer}}</strong> have a history of misuse or dependence of alcohol</p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q6 drug-dependence.html</span-->
+								<p>You said you <strong>{{q6answer}}</strong> have a history of misuse or dependence of illegal drugs</p>
+							</div>
+						</div>
+
+
+
+
+
+						<!--  Important dates  -->
+						<h2 class="heading-medium border-bottom">Important dates</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q7 first-seizure-date.html</span-->
+								<p>The date of your first seizure was <strong>{{q7answer}}</strong></p>
+							</div>
+						</div>
+					</div>
+					{{/vars}}
+
+					<div class="form-group">
+						<div class="checkbox">
+							<input id="check" name="checkbox" type="checkbox">
+							<label for="check">
+								I confirm that the answers I have given are correct to the best of my knowledge and I am aware that it is a criminal offence to make a false declaration and that this could lead to imprisonment.
+							</label><!-- for must be the id of input -->
+						</div>
+						<input type="submit" name="anmelden" class="button" id="btncheck" value="Submit" />
+					</div>
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}
+	{{>includes/elements_scripts}}
+<script type='text/javascript'>
+$(function() {
+  var chk = $('#check');
+  var btn = $('#btncheck');
+
+  chk.on('change', function() {
+    btn.prop("disabled", !this.checked);//true: disabled, false: enabled
+  }).trigger('change'); //page load trigger event
+});
+</script>	
+{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

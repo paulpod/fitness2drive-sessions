@@ -1,0 +1,85 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question2 - Which of the following best describes your condition?
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question2</p>
+<pre class="routes-pre">
+IF 1  >>>  question3<br>
+IF 2  >>>  question3<br>
+IF 3  >>>  feus.html {FEUS flow}
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question2">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Which of the following best describes your condition?</h1>
+
+				<form action="/ep-flowq2" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					{{/vars}}
+					
+					<div class="form-group">
+						<fieldset>
+							<legend class="visuallyhidden">
+								Which of the following best describes your condition?
+							</legend>
+
+							<label class="block-label" for="q2-a1">
+							<input type="radio" id="q2-a1" name="q2answer" value="Epilepsy"
+							data-parsley-required
+							data-parsley-errors-container="#custom-parsley-error"
+							data-parsley-error-message="You need to select an option">
+							Epilepsy</label>
+
+							<label class="block-label" for="q2-a2">
+							<input type="radio" id="q2-a2" name="q2answer" value="Multiple">
+							Multiple Seizures</label>
+
+							<label class="block-label" for="q2-a3">
+							<input type="radio" id="q2-a3" name="q2answer" value="First">
+							First ever unprovoked seizure</label>
+
+							<span id="custom-parsley-error"></span>
+						</fieldset>
+					</div><!--  end .form-group  -->
+
+					{{>includes/button-continue}}
+				</form>
+			</div><!--  end column-two-thirds  -->
+
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

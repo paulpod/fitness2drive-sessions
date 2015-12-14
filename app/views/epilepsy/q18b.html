@@ -1,0 +1,234 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question16 - Check your details
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+<style type="text/css">
+	.url { font-size: 10px; }
+	.border-bottom {
+		border-bottom: 1px solid #c0c0c0;
+		margin-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
+	.column-two-thirds p {
+		margin-top: 15px !important;
+		margin-bottom: 0px !important;
+		padding-bottom: 0px !important;
+	}
+	.grid-row { margin-left: 0px !important; }
+	h2.heading-medium.border-bottom { margin-top: 75px; }
+</style>
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question17</p>
+<pre class="routes-pre">
+NEXT >>> ISSUE F/FEP2
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question17">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Check your details</h1>
+
+				<p>Please check the information that you have provided is correct.</p>
+
+				<form action="/ep-flowq17" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<div class="form-group">
+						<h2 class="heading-medium border-bottom">Your condition</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q1 your-condition.html</span-->
+								<p>Your would like to notify us of <strong>{{q1answer}}</strong></p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q2 describe-condition.html</span-->
+								<p>You described your condition as <strong>{{q2answer}}</strong></p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q3 seizure-type.html</span-->
+								<p>You said you've had <strong>{{q3answer}}</strong> seizures</p>
+							</div>
+						</div>
+
+
+
+
+
+						<h2 class="heading-medium border-bottom">Alcohol and drugs</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q4 seizure-cause.html</span-->
+								<p>You said your seizures <strong>{{q4answer}}</strong> been caused by alcohol or illegal drug misuse</p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q5 alcohol-dependence.html</span-->
+								<p>You said you <strong>{{q5answer}}</strong> have a history of misuse or dependence of alcohol</p>
+							</div>
+						</div>
+
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q6 drug-dependence.html</span-->
+								<p>You said you <strong>{{q6answer}}</strong> have a history of misuse or dependence of illegal drugs</p>
+							</div>
+						</div>
+
+
+
+
+
+						<h2 class="heading-medium border-bottom">Important dates</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q7 first-seizure-date.html</span-->
+								<p>The date of your first seizure was <strong>{{q7answer}}</strong></p>
+							</div>
+						</div>
+
+
+
+
+
+<!--q8-->
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q8 recent-seizure-date.html</span-->
+								<p>The date of your most recent seizure was <strong>{{q8answer}}</strong></p>
+							</div>
+						</div>
+<!--q9-->{{q9answer}}
+						<div ng-show="{{q9answer}}">
+							<div class="grid-row border-bottom">
+								<div class="column-temp">
+									<!--span class="url">q9 other-events.html</span-->
+									<p>You said you <strong>{{q9answer}}</strong> had any other events in the last 12 months</p>
+								</div>
+							</div>
+						</div>
+
+
+
+
+<!--q10-->
+						<h2 class="heading-medium border-bottom">Medication</h2>
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q10 previous-medication.html</span-->
+								<p>You said you were previously taking <strong>{{q10answer}}</strong> for your epilepsy</p>
+							</div>
+						</div>
+<!--q11-->
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q11 current-medication.html</span-->
+								<p>You said you are currently taking <strong>{{q11answer}}</strong> for your epilepsy</p>
+							</div>
+						</div>
+<!--q12-->
+						<div class="grid-row border-bottom">
+							<div class="column-temp">
+								<!--span class="url">q12 drowsy-confused-medication.html</span-->
+								<p>You said your current medication <strong>{{q12answer}}</strong> make you confused or drowsy</p>
+							</div>
+						</div>
+
+
+
+
+<!--q13-->
+						<h2 class="heading-medium border-bottom">Medical consent</h2>
+						<div class="grid-row border-bottom">
+							<!--span class="url">q13 epilepsy-declaration.html</span-->
+							<div class="column-third">
+								You said you <strong>{{q13answer}}</strong> to: 
+							</div>
+							<div class="column-two-thirds">
+								<ul class="list-bullet">
+									<li>follow the advice of your doctors regarding any further treatment for epilepsy</li>
+									<li>attend necessary appointments</li>
+									<li>monitor your condition</li>
+									<li>inform DVLA if you experience further attacks</li>
+								</ul>
+							</div>
+						</div>
+<!--q14-->
+						<div class="grid-row border-bottom">
+							<div class="column-third">
+								<!--span class="url">q14 medical-consent-1.html</span-->
+								<p>You <strong>{{q14answer}}</strong>:</p>
+							</div>
+							<div class="column-two-thirds">
+								<ul class="list-bullet">
+									<li>that medical reports relevant to your fitness to drive may be disclosed to DVLA. These reports may be obtained from doctors, orthoptists, paramedical staff.</li>
+									<li>and that that DVLA can disclose relevant personal and medical information to doctors, orthoptists, paramedical staff, driving assessors, occupational therapists and members of the Department for Transport's Medical Advisory Panels if neccesary.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{{/vars}}
+
+					<div class="form-group">
+						<div class="checkbox">
+							<input id="check" name="checkbox" type="checkbox">
+							<label for="check">
+								I confirm that the answers I have given are correct to the best of my knowledge and I am aware that it is a criminal offence to make a false declaration and that this could lead to imprisonment.
+							</label><!-- for must be the id of input -->
+						</div>
+						<input type="submit" name="anmelden" class="button" id="btncheck" value="Submit" />
+					</div>
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}
+	{{>includes/elements_scripts}}
+<script type='text/javascript'>
+$(function() {
+  var chk = $('#check');
+  var btn = $('#btncheck');
+
+  chk.on('change', function() {
+    btn.prop("disabled", !this.checked);//true: disabled, false: enabled
+  }).trigger('change'); //page load trigger event
+});
+</script>	
+{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

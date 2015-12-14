@@ -1,0 +1,87 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question3 - Which of the following seizures have you had?
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question3</p>
+<pre class="routes-pre">
+OPT 1 >>> question4<br>
+OPT 2 >>> awake.html {AWAKE flow}<br>
+OPT 3 >>> mixed.html {MIXED flow}
+</pre>
+</div>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question3">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Which of the following seizures have you had?</h1>
+
+				<form action="/ep-flowq3" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<fieldset>
+							<legend class="visuallyhidden">
+								Which of the following seizures have you had?
+							</legend>
+
+							<label class="block-label" for="q3-a1">
+								<input type="radio" id="q3-a1" name="q3answer" value="Asleep"
+								data-parsley-required
+								data-parsley-errors-container="#custom-parsley-error"
+								data-parsley-error-message="You need to select an option">
+								Asleep seizures only</label>
+
+							<label class="block-label" for="q3-a2">
+								<input type="radio" id="q3-a2" name="q3answer" value="Awake">
+								Awake seizures only</label>
+
+							<label class="block-label" for="q3-a3">
+								<input type="radio" id="q3-a3" name="q3answer" value="Mixed">
+								Awake and asleep seizures</label>
+								
+							<span id="custom-parsley-error"></span>
+						</fieldset>
+
+					</div><!--  end .form-group  -->
+
+					{{>includes/button-continue}}
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

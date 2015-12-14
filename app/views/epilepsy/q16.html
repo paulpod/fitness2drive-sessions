@@ -1,0 +1,176 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	15 - Medical consent 2
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question16</p>
+<pre class="routes-pre">
+NEXT >>> question-16<br>
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+		<div class="grid-row" id="question15">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">We now need to make further enquiries into your fitness to drive.</h1>
+				<!-- <h1 class="form-title heading-large">It may be useful if we could reveal certain aspects of this enquiry to your doctors.</h1> -->
+
+				<form action="/ep-flowq15" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					<input type="hidden" name="q5answer" value="{{q5answer}}">
+					<input type="hidden" name="q6answer" value="{{q6answer}}">
+					<input type="hidden" name="q6Aanswer" value="{{q6Aanswer}}">
+					<input type="hidden" name="q7answer" value="{{q7answer}}">
+					<input type="hidden" name="q8answer" value="{{q8answer}}">
+					<input type="hidden" name="q9answer" value="{{q9answer}}">
+					<input type="hidden" name="q10answer1" value="{{q10answer1}}">
+					<input type="hidden" name="startdate1" value="{{startdate1}}">
+					<input type="hidden" name="enddate1" value="{{enddate1}}">
+					<input type="hidden" name="q10answer2" value="{{q10answer2}}">
+					<input type="hidden" name="startdate2" value="{{startdate2}}">
+					<input type="hidden" name="enddate2" value="{{enddate2}}">
+					<input type="hidden" name="q10answer3" value="{{q10answer3}}">
+					<input type="hidden" name="startdate3" value="{{startdate3}}">
+					<input type="hidden" name="enddate3" value="{{enddate3}}">
+					<input type="hidden" name="q11answer" value="{{q11answer}}">
+					<input type="hidden" name="q12answer" value="{{q12answer}}">
+					<input type="hidden" name="q13answer" value="{{q13answer}}">
+					<input type="hidden" name="q14answer" value="{{q14answer}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<div class="form-group">
+							<p>Do you agree that Medical reports relevant to your fitness to drive can be disclosed to DVLA by your doctor(s)?</p>
+						</div>
+
+						<div class="form-group">
+							<fieldset class="inline">
+								<label class="block-label" for="q15a-a1">
+									<input type="radio" id="q15a-a1" name="q15Aanswer" value="agree">
+									Yes
+								</label>
+
+								<label class="block-label" for="q15a-a2">
+									<input type="radio" id="q15a-a2" name="q15Aanswer" value="do not agree">
+									No
+								</label>
+							</fieldset>
+						</div><!--  end .form-group  -->
+
+<!--  
+						<div class="form-group">
+							I agree to the release of medical information by DVLA, discovered during this medical enquiry, to my doctors.
+							<fieldset class="inline">
+								<label class="block-label" for="q15b-a1">
+									<input type="radio" id="q15b-a1" name="q15Banswer" value="agree">
+									Yes
+								</label>
+
+								<label class="block-label" for="q15b-a2">
+									<input type="radio" id="q15b-a2" name="q15Banswer" value="do not agree">
+									No
+								</label>
+							</fieldset>
+						</div>end .form-group  -->
+
+
+
+<!--
+  <form action="medical-form" method="get" class="form" data-parsley-validate>
+    
+    <div class="grid-row" id="q1">
+      <div class="column-full">
+
+        <div class="inline form-group" id="question-1">
+
+          <div>I agree that DVLA may inform my doctors of the outcome of this medical enquiry.</div>
+
+          <legend id="q1-error" >
+            <span class="error-message">
+              Select an option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q1-a1" id="q1-a1-label">
+            <input id="q1-a1" type="radio" name="q1-answer" value="Y" onclick="">Yes
+          </label>
+          <label class="block-label" for="q1-a2" id="q1-a2-label">
+            <input id="q1-a2" type="radio" name="q1-answer" value="N" onclick="">No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-row" id="q2">
+      <div class="column-full">
+
+        <div class="inline form-group" id="question-2">
+
+          <div>I agree to the release of medical information by DVLA, discovered during this medical enquiry, to my doctors.</div>
+
+          <legend id="q2-error">
+            <span class="error-message">
+              Select an option
+            </span>
+          </legend>
+          
+          <label class="block-label" for="q2-a1" id="q2-a1-label">
+            <input id="q2-a1" type="radio" name="q2-answer" value="Y" onclick="">Yes
+          </label>
+          <label class="block-label" for="q2-a2" id="q2-a2-label">
+            <input id="q2-a2" type="radio" name="q2-answer" value="N" onclick="">No
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input id="continue" name="continue" type="button" class="button" value="Continue" onclick="validate();" /> 
+    </div>
+    
+  </form>
+
+
+</script>
+-->
+					</div><!--  end .form-group  -->
+
+					{{>includes/button-continue}}
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

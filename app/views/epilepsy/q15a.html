@@ -1,0 +1,94 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	14a - Medical consent 1
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question15a</p>
+<pre class="routes-pre">
+YES >>> question-15<br>
+NO >>> question-17<br>
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+		
+		<div class="grid-row" id="question14a">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Consent to Medical Enquiry</h1>
+
+				<form action="/ep-flowq14a" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					<input type="hidden" name="q5answer" value="{{q5answer}}">
+					<input type="hidden" name="q6answer" value="{{q6answer}}">
+					<input type="hidden" name="q6Aanswer" value="{{q6Aanswer}}">
+					<input type="hidden" name="q7answer" value="{{q7answer}}">
+					<input type="hidden" name="q8answer" value="{{q8answer}}">
+					<input type="hidden" name="q9answer" value="{{q9answer}}">
+					<input type="hidden" name="q10answer1" value="{{q10answer1}}">
+					<input type="hidden" name="startdate1" value="{{startdate1}}">
+					<input type="hidden" name="enddate1" value="{{enddate1}}">
+					<input type="hidden" name="q10answer2" value="{{q10answer2}}">
+					<input type="hidden" name="startdate2" value="{{startdate2}}">
+					<input type="hidden" name="enddate2" value="{{enddate2}}">
+					<input type="hidden" name="q10answer3" value="{{q10answer3}}">
+					<input type="hidden" name="startdate3" value="{{startdate3}}">
+					<input type="hidden" name="enddate3" value="{{enddate3}}">
+					<input type="hidden" name="q11answer" value="{{q11answer}}">
+					<input type="hidden" name="q12answer" value="{{q12answer}}">
+					<input type="hidden" name="q13answer" value="{{q13answer}}">
+					<input type="hidden" name="q14answer" value="{{q14answer}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<div class="form-group">
+							<p>Your consent to the release of medical reports by your doctors to DVLA is required by law so that we can obtain further information relevant to your fitness to drive when necessary.</p>
+						</div>
+
+						<div id="consent" class="form-group">
+							<p class="important-notice">If you do not provide consent, we are unable to make a licensing decision and it would be necessary for reasons of road safety, to revoke your driving licence for non-compliance.</p>
+						</div>
+
+						<div class="form-group">
+							{{>includes/button-continue}}
+							<a href="javascript:history.back()">Back to consent screen</a>
+						</div><!--  end .form-group  -->
+					</div><!--  end .form-group  -->
+
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

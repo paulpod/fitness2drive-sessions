@@ -1,0 +1,106 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question07 - Is the address on your driving licence correct?
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+<style type="text/css">
+	td { font-size: 20px !important; }
+	td.strong { font-weight: bold !important; }
+</style>
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question7</p>
+<pre class="routes-pre">
+YES >>> question8<br>
+NO >>> question7b
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+	{{>includes/phase_banner}}
+		<div class="grid-row" id="question7">
+			<div class="column-two-thirds">
+
+				<h1 class="heading-large">Your details</h1>
+
+				<span class="form-hint">The following details are currently held on your driving licence</span> 
+
+				<table>
+					<tbody>
+						<tr>
+							<td>Driving Licence number</td>
+							<td class="strong">MORGA753116SM9IJ</td>
+						</tr>
+						<tr>
+							<td>Name</td>
+							<td class="strong">Mrs Emily Lines</td>
+						</tr>
+						<tr>
+							<td>Address</td>
+							<td class="strong">86 Tanylan Road<br>Morriston<br>SWANSEA<br>SA6 7DU</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2 class="heading-medium">Is the address on your driving licence correct?</h4>
+
+				<form action="/ep-flowq7" method="get" class="form">
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					<input type="hidden" name="q5answer" value="{{q5answer}}">
+					<input type="hidden" name="q6answer" value="{{q6answer}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">
+								Is the address on your driving licence correct?
+							</legend>
+							
+							<legend class="visuallyhidden">Is the address on your driving licence correct?</legend>
+
+							<label class="block-label" for="q7-a1">
+								<input type="radio" id="q7-a1" name="q7answer" value="Yes">
+								Yes
+							</label>
+
+							<label class="block-label" for="q7-a2">
+								<input type="radio" id="q7-a2" name="q7answer" value="No">
+								No
+							</label>
+						</fieldset>
+					</div><!--  end .form-group  -->
+
+					{{>includes/button-continue}}
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

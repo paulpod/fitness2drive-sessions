@@ -1,0 +1,180 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question11 - Provide details of any medication you have previously taken for your epilepsy
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+<style type="text/css">
+	.panel-indent {
+    clear: both;
+    border-left: none;
+    padding: 0;
+    margin-top: 5em;
+    margin-bottom: 0;
+}
+</style>
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question11</p>
+<pre class="routes-pre">
+NEXT >>> question12
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question11">
+			<div class="column-two-thirds">
+				<h1 class="form-title heading-large">Have you previously taken medication for your epilepsy?</h1>
+
+				<form action="/ep-flowq11" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					<input type="hidden" name="q5answer" value="{{q5answer}}">
+					<input type="hidden" name="q6answer" value="{{q6answer}}">
+					<input type="hidden" name="q7answer" value="{{q7answer}}">
+					<input type="hidden" name="q7answerA" value="{{q7answerA}}">
+					<input type="hidden" name="q7answerA" value="{{q7answerB}}">
+					<input type="hidden" name="email" value="{{email}}">
+					<input type="hidden" name="q8answer" value="{{q8answer}}">
+					<input type="hidden" name="q9answer" value="{{q9answer}}">
+					<input type="hidden" name="q10answer" value="{{q10answer}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">
+								Have you previously medication for your epilepsy?</legend>
+
+							<label class="block-label" for="q11-a1" data-target="email-confirmation">
+							<input id="q11-a1" type="radio" name="q11answer" value="Yes"
+							data-parsley-required
+							data-parsley-errors-container="#custom-parsley-error"
+							data-parsley-error-message="You need to select an option">
+							Yes
+							</label>
+
+							<label class="block-label" for="q11-a2">
+							<input id="q11-a2" type="radio" name="q11answer" value="No">
+							No
+							</label>
+
+							<div class="panel-indent js-hidden" id="email-confirmation">
+								<!-- <h2 class="heading-medium">Your email address</h2> -->
+								<fieldset>
+									<div class="form-group">
+										<label class="form-label" for="q11-a3">
+											Medication name</label>
+											<p class="form-hint">For example, clonazepam</p>
+										<input class="form-control" id="q11-a4" type="text" name="drugname1" value="clonazepam">
+									</div><!--  end .form-group  -->
+
+									<!--  START DATE  -->
+									<div class="form-group">
+										<label class="form-label" for="q11-a4">
+										Start date</label>
+
+										<fieldset>
+											<legend class="visuallyhidden">
+												Start date
+											</legend>
+
+											<div class="form-date">
+												<p class="form-hint">For example, 01 01 2010</p>
+
+												<div class="form-group form-group-day">
+													<label for="startday1">Day</label>
+													<input class="form-control" id="startday1" name="startday1" type="number" pattern="[0-9]*" min="0" max="31" value="01">
+												</div>
+												<div class="form-group form-group-month">
+													<label for="startmonth1">Month</label>
+													<input class="form-control" id="startmonth1" name="startmonth1" type="number" pattern="[0-9]*" min="0" max="12" value="01">
+												</div>
+												<div class="form-group form-group-year">
+													<label for="startyear1">Year</label>
+													<input class="form-control" id="startyear1" name="startyear1" type="number" pattern="[0-9]*" min="0" max="2015" value="2010">
+												</div>
+
+												<span id="custom-parsley-error"></span>
+											</div><!--  end .form-date  -->
+										</fieldset>
+									</div><!--  end .form-group  -->
+										
+									<!--  END DATE date  -->
+									<div class="form-group">
+										<label class="form-label" for="q11-a5">
+											End date
+										</label>
+
+										<fieldset>
+											<legend class="visuallyhidden">
+												End date
+											</legend>
+
+											<div class="form-date">
+												<p class="form-hint">For example, 01 01 2011</p>
+
+												<div class="form-group form-group-day">
+													<label for="endday1">Day</label>
+													<input class="form-control" id="endday1" name="endday1" type="number" pattern="[0-9]*" min="0" max="31" value="01">
+												</div>
+												<div class="form-group form-group-month">
+													<label for="endmonth1">Month</label>
+													<input class="form-control" id="endmonth1" name="endmonth1" type="number" pattern="[0-9]*" min="0" max="12" value="01">
+												</div>
+												<div class="form-group form-group-year">
+													<label for="endyear1">Year</label>
+													<input class="form-control" id="endyear1" name="endyear1" type="number" pattern="[0-9]*" min="0" max="2015" value="2011">
+												</div>
+											</div>
+										</fieldset>
+									</div><!--  end .form-group  -->
+
+									<div class="form-group">
+										<input type="submit" class="dummyLink" formaction="/ep-flowq11a" value="+ Add medication">
+									</div><!--  end .form-group  -->
+
+								</fieldset>
+							</div>
+							
+							<span id="custom-parsley-error"></span>
+						</fieldset>
+					</div>
+
+					<div class="form-group">
+						<input class="button" type="submit" value="Continue">
+					</div>
+
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

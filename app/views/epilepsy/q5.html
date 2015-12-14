@@ -1,0 +1,82 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question5 - Do you have a history of misuse or dependence of alcohol?
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question5</p>
+<pre class="routes-pre">
+YES >>> question6<br>
+NO >>> question6
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+		
+		<div class="grid-row" id="question5">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Do you have a history of misuse or dependence of alcohol?</h1>
+
+				<form action="/ep-flowq5" method="get" class="form" data-parsley-validate>
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">
+								Do you have a history of misuse or dependence of alcohol?
+							</legend>
+							
+							<label class="block-label" for="q5-a1">
+								<input type="radio" id="q5-a1" name="q5answer" value="do"
+								data-parsley-required
+								data-parsley-errors-container="#custom-parsley-error"
+								data-parsley-error-message="You need to select an option">
+								Yes</label>
+
+							<label class="block-label" for="q5-a2">
+								<input type="radio" id="q5-a2" name="q5answer" value="do not">
+								No</label>
+
+							<span id="custom-parsley-error"></span>
+						</fieldset>
+					</div><!--  end .form-group  -->
+
+					{{>includes/button-continue}}
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

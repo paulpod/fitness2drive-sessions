@@ -1,0 +1,203 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question11b - Provide details of any medication you have previously taken for your epilepsy
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+	<style type="text/css">
+		.dummyLink {
+			color: #005ea5;
+			background-color: transparent;
+			text-decoration: underline;
+			border: none;
+			cursor: pointer;
+		}
+		.dummyLink:focus { outline: none; }
+		.dummyLink:active { color: #2e8aca; }
+		.dummyLink:hover { color: #2e8aca; }
+		.dummyLink:visited { color: #4c2c92; }
+		h2 { margin-top: 0px !important; margin-bottom: 0px !important; }
+	</style>
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question11b</p>
+<pre class="routes-pre">
+NEXT >>> question-11
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question10">
+			<div class="column-two-thirds">
+				<div class="form-group">
+					<h1 class="form-title heading-large" style="margin-bottom: 0px;">Provide details of any medication you have previously taken for your epilepsy</h1>
+					{{#vars}}
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">&nbsp;</th>
+								<th class="numeric" scope="col">&nbsp;</th>
+								<th class="numeric" scope="col">&nbsp;</th>
+								<th class="numeric" scope="col">&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Medication 1</strong></td>
+								<td>{{q10answer1}}</td>
+								<td class="numeric">{{sd1}}</td>
+								<td class="numeric">{{ed1}}</td>
+							</tr>
+							<tr>
+								<td><strong>Medication 2</strong></td>
+								<td>{{q10answer2}}</td>
+								<td class="numeric">{{sd2}}</td>
+								<td class="numeric">{{sd2}}</td>
+							</tr>
+						</tbody>
+					</table>
+				
+					{{/vars}}
+				</div>
+
+
+
+
+
+
+
+
+
+
+				<div class="column-half">
+
+					<form action="/ep-flowq10c" method="get" class="form" data-parsley-validate>
+						{{#vars}}
+						<input type="hidden" name="q1answer" value="{{q1answer}}">
+						<input type="hidden" name="q2answer" value="{{q2answer}}">
+						<input type="hidden" name="q3answer" value="{{q3answer}}">
+						<input type="hidden" name="q4answer" value="{{q4answer}}">
+						<input type="hidden" name="q5answer" value="{{q5answer}}">
+						<input type="hidden" name="q6answer" value="{{q6answer}}">
+						<input type="hidden" name="q6Aanswer" value="{{q6Aanswer}}">
+						<input type="hidden" name="q7answer" value="{{q7answer}}">
+						<input type="hidden" name="q8answer" value="{{q8answer}}">
+						<input type="hidden" name="q9answer" value="{{q9answer}}">
+						<input type="hidden" name="q10answer1" value="{{q10answer1}}">
+						<input type="hidden" name="startdate1" value="{{startdate1}}">
+						<input type="hidden" name="enddate1" value="{{enddate1}}">
+						<input type="hidden" name="sd1" value="{{sd1}}">
+						<input type="hidden" name="ed1" value="{{ed1}}">
+						<input type="hidden" name="q10answer2" value="{{q10answer2}}">
+						<input type="hidden" name="startdate2" value="{{startdate2}}">
+						<input type="hidden" name="enddate2" value="{{enddate2}}">
+						<input type="hidden" name="sd2" value="{{sd2}}">
+						<input type="hidden" name="ed2" value="{{ed2}}">
+						{{/vars}}
+
+						<div class="form-group" style="margin-left: -15px !important;">
+
+							<div class="form-group">
+								<label class="form-label" for="q10-a1">
+									Medication name</label>
+									<p class="form-hint">For example, levetiracetam</p>
+								<input class="form-control" id="q10-a1" type="text" name="q10answer3" value="">
+							</div><!--  end .form-group  -->
+
+							<div class="form-group">
+								<label class="form-label" for="q10-a1">
+								Start date</label>
+
+								<fieldset>
+									<legend class="visuallyhidden">
+										Start date
+									</legend>
+
+									<div class="form-date">
+										<p class="form-hint">For example, 03 03 2012</p>
+
+										<div class="form-group form-group-day">
+											<label for="startday3">Day</label>
+											<input class="form-control" id="startday3" name="startday3" type="number" pattern="[0-9]*" min="0" max="31" value="">
+										</div>
+										<div class="form-group form-group-month">
+											<label for="startmonth3">Month</label>
+											<input class="form-control" id="startmonth3" name="startmonth3" type="number" pattern="[0-9]*" min="0" max="12" value="">
+										</div>
+										<div class="form-group form-group-year">
+											<label for="startyear3">Year</label>
+											<input class="form-control" id="startyear3" name="startyear3" type="number" pattern="[0-9]*" min="0" max="2015" value="">
+										</div>
+
+										<span id="custom-parsley-error"></span>
+									</div><!--  end .form-date  -->
+								</fieldset>
+							</div><!--  end .form-group  -->
+							
+							<div class="form-group">
+								<label class="form-label" for="q10-a1">
+									End date
+								</label>
+
+								<fieldset>
+									<legend class="visuallyhidden">
+										End date
+									</legend>
+
+									<div class="form-date">
+										<p class="form-hint">For example, 03 03 2013</p>
+
+										<div class="form-group form-group-day">
+											<label for="endday3">Day</label>
+											<input class="form-control" id="endday3" name="endday3" type="number" pattern="[0-9]*" min="0" max="31" value="">
+										</div>
+										<div class="form-group form-group-month">
+											<label for="endmonth3">Month</label>
+											<input class="form-control" id="endmonth3" name="endmonth3" type="number" pattern="[0-9]*" min="0" max="12" value="">
+										</div>
+										<div class="form-group form-group-year">
+											<label for="endyear3">Year</label>
+											<input class="form-control" id="endyear3" name="endyear3" type="number" pattern="[0-9]*" min="0" max="2015" value="">
+										</div>
+									</div>
+								</fieldset>
+							</div><!--  end .form-group  -->
+
+							<div class="form-group">
+								{{>includes/button-continue}}
+							</div><!--  end .form-group  -->
+						</div><!--  end .form-group  -->
+					</form>
+
+				</div><!--  end column-two-thirds  -->
+
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

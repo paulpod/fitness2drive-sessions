@@ -1,0 +1,94 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question7b - Is the address on your driving licence correct?
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question7b</p>
+<pre class="routes-pre">
+NEXT >>> question8<br>
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question7b">
+			<div class="column-two-thirds">
+
+				<h1 class="form-title heading-large">Would you like to receive a confirmation email?</h1>
+
+				<form action="/ep-flowq7b" method="get" class="form">
+					{{#vars}}
+					<input type="hidden" name="q1answer" value="{{q1answer}}">
+					<input type="hidden" name="q2answer" value="{{q2answer}}">
+					<input type="hidden" name="q3answer" value="{{q3answer}}">
+					<input type="hidden" name="q4answer" value="{{q4answer}}">
+					<input type="hidden" name="q5answer" value="{{q5answer}}">
+					<input type="hidden" name="q6answer" value="{{q6answer}}">
+					<input type="hidden" name="q7answer" value="{{q7answer}}">
+					<input type="hidden" name="q7answerA" value="{{q7answerA}}">
+					{{/vars}}
+
+					<div class="form-group">
+						<fieldset class="inline">
+							<legend class="visuallyhidden">
+								Would you like to receive a confirmation email?</legend>
+
+							<label class="block-label" for="q7b-a1" data-target="email-confirmation">
+							<input id="q7b-a1" type="radio" name="q7answerB" value="Yes">
+							Yes
+							</label>
+
+							<label class="block-label" for="q7b-a2">
+							<input id="q7b-a2" type="radio" name="q7answerB" value="No">
+							No
+							</label>
+
+							<div class="panel-indent js-hidden" id="email-confirmation">
+								<!-- <h2 class="heading-medium">Your email address</h2> -->
+								<fieldset>
+									<legend class="visuallyhidden">
+										Your email address</legend>
+
+					                <div class="form-group form-group-compound">
+					                  <label class="form-label" for="email">Your email address</label>
+					                  <input class="form-control" type="text" id="email" name="email" value="address@server.com">
+					                </div>
+								</fieldset>
+							</div>
+						</fieldset>
+					</div>
+
+					{{>includes/button-continue}}
+				</form>
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

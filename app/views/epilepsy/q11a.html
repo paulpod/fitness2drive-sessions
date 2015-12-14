@@ -1,0 +1,205 @@
+{{<govuk_template}}
+
+{{$pageTitle}}
+	question11a - Provide details of any medication you have previously taken for your epilepsy
+{{/pageTitle}}
+
+{{$head}}
+	{{>includes/head}}
+	{{>includes/scripts}}
+	<style type="text/css">
+		h2 { margin-top: 0px !important; margin-bottom: 0px !important; }
+	</style>
+{{/head}}
+
+{{$propositionHeader}}
+	{{>includes/propositional_navigation}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+<!--  Debugging  -->
+<div class="float-right">
+{{#vars}}
+{{>includes/variables}}
+{{/vars}}
+<p class="form-title bold-xlarge">question11a</p>
+<pre class="routes-pre">
+NEXT >>> question-11
+</pre>
+</div>
+<!--  Routing  -->
+
+	<main id="content" role="main">
+		{{>includes/phase_banner}}
+
+		<div class="grid-row" id="question11a">
+			<div class="column-two-thirds">
+				<div class="form-group">
+					<h1 class="form-title heading-large" style="margin-bottom: 0px;">Provide details of any medication you have previously taken for your epilepsy</h1>
+					
+						<!-- <p style="margin-top: 10px;"><Strong>Medication 1:   </strong> {{q10answer1}},{{startdate1}}, {{enddate1}}</p> -->
+					<table>
+						<thead>
+							<tr>
+								<th scope="col">&nbsp;</th>
+								<th class="numeric" scope="col">&nbsp;</th>
+								<th class="numeric" scope="col">&nbsp;</th>
+								<th class="numeric" scope="col">&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								{{#vars}}
+								<td><strong>Medication 1</strong></td>
+								<td>{{q10answer1}}</td>
+								<td class="numeric">{{sd1}}</td>
+								<td class="numeric">{{sd1}}</td>
+								{{/vars}}
+							</tr>
+						</tbody>
+					</table>
+					
+				</div>
+
+
+				<div class="column-half">
+
+					<form action="/ep-flowq11b" method="get" class="form" data-parsley-validate>
+						{{#vars}}
+						<input type="hidden" name="q1answer" value="{{q1answer}}">
+						<input type="hidden" name="q2answer" value="{{q2answer}}">
+						<input type="hidden" name="q3answer" value="{{q3answer}}">
+						<input type="hidden" name="q4answer" value="{{q4answer}}">
+						<input type="hidden" name="q5answer" value="{{q5answer}}">
+						<input type="hidden" name="q6answer" value="{{q6answer}}">
+						<input type="hidden" name="q6Aanswer" value="{{q6Aanswer}}">
+						<input type="hidden" name="q7answer" value="{{q7answer}}">
+						<input type="hidden" name="q8answer" value="{{q8answer}}">
+						<input type="hidden" name="q9answer" value="{{q9answer}}">
+						<input type="hidden" name="q10answer1" value="{{q10answer1}}">
+						<input type="hidden" name="startdate1" value="{{startdate1}}">
+						<input type="hidden" name="enddate1" value="{{enddate1}}">
+						<input type="hidden" name="sd1" value="{{sd1}}">
+						<input type="hidden" name="ed1" value="{{ed1}}">
+						{{/vars}}
+
+						<div class="form-group" style="margin-left: 0px !important;">
+
+							<div class="form-group">
+								<label class="form-label" for="q10-a1">
+									Medication name</label>
+									<p class="form-hint">For example, gabapentin</p>
+								<input class="form-control" id="q10-a1" type="text" name="q10answer2" value="">
+							</div><!--  end .form-group  -->
+
+							<div class="form-group">
+								<label class="form-label" for="q10-a1">
+								Start date</label>
+
+								<fieldset>
+									<legend class="visuallyhidden">
+										Start date
+									</legend>
+
+									<div class="form-date">
+										<p class="form-hint">For example, 02 02 2011</p>
+
+										<div class="form-group form-group-day">
+											<label for="startday2">Day</label>
+											<input class="form-control" id="startday2" name="startday2" type="number" pattern="[0-9]*" min="0" max="31" value="02">
+										</div>
+										<div class="form-group form-group-month">
+											<label for="startmonth2">Month</label>
+											<input class="form-control" id="startmonth2" name="startmonth2" type="number" pattern="[0-9]*" min="0" max="12" value="02">
+										</div>
+										<div class="form-group form-group-year">
+											<label for="startyear2">Year</label>
+											<input class="form-control" id="startyear2" name="startyear2" type="number" pattern="[0-9]*" min="0" max="2015" value="2011">
+										</div>
+
+										<span id="custom-parsley-error"></span>
+									</div><!--  end .form-date  -->
+								</fieldset>
+							</div><!--  end .form-group  -->
+							
+							<div class="form-group">
+								<label class="form-label" for="q10-a1">
+									End date
+								</label>
+
+								<fieldset>
+									<legend class="visuallyhidden">
+										End date
+									</legend>
+
+									<div class="form-date">
+										<p class="form-hint">For example, 02 02 2012</p>
+
+										<div class="form-group form-group-day">
+											<label for="endday2">Day</label>
+											<input class="form-control" id="endday2" name="endday2" type="number" pattern="[0-9]*" min="0" max="31" value="02">
+										</div>
+										<div class="form-group form-group-month">
+											<label for="endmonth2">Month</label>
+											<input class="form-control" id="endmonth2" name="endmonth2" type="number" pattern="[0-9]*" min="0" max="12" value="02">
+										</div>
+										<div class="form-group form-group-year">
+											<label for="endyear2">Year</label>
+											<input class="form-control" id="endyear2" name="endyear2" type="number" pattern="[0-9]*" min="0" max="2015" value="2012">
+										</div>
+									</div>
+								</fieldset>
+							</div><!--  end .form-group  -->
+
+							<div class="form-group">
+								<input type="submit" class="dummyLink" value="+ Add medication">
+							</div><!--  end .form-group  -->
+						</div><!--  end .form-group  -->
+					</form>
+
+					<form action="/ep-flowq11" method="get" class="form">
+						{{#vars}}
+						<input type="hidden" name="q1answer" value="{{q1answer}}">
+						<input type="hidden" name="q2answer" value="{{q2answer}}">
+						<input type="hidden" name="q3answer" value="{{q3answer}}">
+						<input type="hidden" name="q4answer" value="{{q4answer}}">
+						<input type="hidden" name="q5answer" value="{{q5answer}}">
+						<input type="hidden" name="q6answer" value="{{q6answer}}">
+						<input type="hidden" name="q6Aanswer" value="{{q6Aanswer}}">
+						<input type="hidden" name="q7answer" value="{{q7answer}}">
+						<input type="hidden" name="q8answer" value="{{q8answer}}">
+						<input type="hidden" name="q9answer" value="{{q9answer}}">
+						<input type="hidden" name="q10answer1" value="{{q10answer1}}">
+						<input type="hidden" name="startdate1" value="{{startdate1}}">
+						<input type="hidden" name="enddate1" value="{{enddate1}}">
+						{{/vars}}
+
+						<div class="form-group">
+							{{>includes/button-continue}}
+						</div><!--  end .form-group  -->
+					</form>
+				</div><!--  end column-two-thirds  -->
+
+				<!-- <div class="column-half">
+					{{#vars}}
+						<h2 class="heading-medium">Medication 1</h2>
+						Medication name: {{q10answer1}}<br>
+						Start date: {{startdate1}}<br>
+						End date: {{enddate1}}
+					{{/vars}}
+				</div> -->
+
+			</div><!--  end column-two-thirds  -->
+		</div><!--  end gridrow  -->
+	</main>
+{{/content}}
+
+{{$bodyEnd}}{{/bodyEnd}}
+
+{{$footerTop}}{{/footerTop}}
+
+{{$footerSupportLinks}}{{/footerSupportLinks}}
+
+{{/govuk_template}}

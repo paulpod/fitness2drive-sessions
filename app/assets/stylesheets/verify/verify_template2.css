@@ -1,0 +1,4432 @@
+/* govuk_frontend_toolkit includes */
+@import url(../javascripts/vendor/media-element/mediaelementplayer.css);
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* line 48, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-links:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/*
+
+Mixin and defaults for making buttons on GOV.UK services.
+
+For guidance, see: https://www.gov.uk/service-manual/design-and-content/resources/buttons.html
+
+Example usage:
+
+.button{
+  @include button;
+}
+.button-secondary{
+  @include button($grey-3);
+}
+.button-warning{
+  @include button($red);
+}
+
+*/
+/* local styleguide includes */
+/* New Greys */
+/* line 84, ../../../assets/stylesheets/govuk/govuk-template.scss */
+html, body, button, input, table, td, th {
+  font-family: "nta", Arial, sans-serif;
+}
+
+/* line 87, ../../../assets/stylesheets/govuk/govuk-template.scss */
+html, body, div, h1, h2, legend, h3, h4, h5, h6, article, aside, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+/* line 93, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.group:before,
+.group:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 99, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.group:after {
+  clear: both;
+}
+
+/* line 102, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.group {
+  zoom: 1;
+}
+
+/* line 105, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.content-fixed {
+  top: 0;
+  position: fixed;
+}
+
+/* line 109, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.shim {
+  display: block;
+}
+
+/*
+ * 1. Prevents iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 116, ../../../assets/stylesheets/govuk/govuk-template.scss */
+html {
+  -webkit-text-size-adjust: 100%;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 1 */
+  background: white;
+}
+
+/* line 123, ../../../assets/stylesheets/govuk/govuk-template.scss */
+body {
+  color: #0b0c0c;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 129, ../../../assets/stylesheets/govuk/govuk-template.scss */
+ol, ul, nav ol, nav ul {
+  list-style: inherit;
+}
+
+/* line 132, ../../../assets/stylesheets/govuk/govuk-template.scss */
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* line 137, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a, .fake-link, .js-enabled .identity-evidence-content .dialog-cancel, .link-text,
+a:visited,
+.fake-link:visited,
+.js-enabled .identity-evidence-content .dialog-cancel:visited,
+.link-text:visited {
+  color: #2e3191;
+}
+
+/* line 140, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a:hover, .fake-link:hover, .js-enabled .identity-evidence-content .dialog-cancel:hover, .link-text:hover {
+  color: #2e8aca;
+}
+
+/* line 143, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a:active, .fake-link:active, .js-enabled .identity-evidence-content .dialog-cancel:active, .link-text:active {
+  color: #2e8aca;
+}
+
+/* line 146, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a[rel="external"]:after, [rel="external"].fake-link:after, .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, [rel="external"].link-text:after {
+  background-image: url(external-link.png);
+  background-repeat: no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 150, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  a[rel="external"]:after, [rel="external"].fake-link:after, .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, [rel="external"].link-text:after {
+    background-image: url(external-link-24x24.png);
+    background-size: 12px 400px;
+  }
+}
+/* line 153, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a[rel="external"]:after, [rel="external"].fake-link:after, .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, [rel="external"].link-text:after {
+  content: "\A0\A0\A0\A0";
+  background-position: right 6px;
+}
+
+/* line 156, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a[rel="external"]:hover:after, [rel="external"].fake-link:hover:after, .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:hover:after, [rel="external"].link-text:hover:after {
+  background-position: right -382px;
+}
+
+@media (max-width: 640px) {
+  /* line 159, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  a[rel="external"]:after, [rel="external"].fake-link:after, .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, [rel="external"].link-text:after {
+    content: "\A0\A0\A0\A0\A0";
+    background-position: right 3px;
+  }
+
+  /* line 162, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  a[rel="external"]:hover:after, [rel="external"].fake-link:hover:after, .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:hover:after, [rel="external"].link-text:hover:after {
+    background-position: right -385px;
+  }
+}
+/* line 165, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.external-link:after {
+  content: "\A0\A0\A0\A0\A0\A0\A0\A0";
+  background-position: right 0px;
+}
+
+/* line 168, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.external-link:hover:after {
+  background-position: right 0px;
+}
+
+/* line 170, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.external-link:after {
+  background-image: url(external-link-black-12x12.png);
+  background-repeat: no-repeat;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 174, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  .external-link:after {
+    background-image: url(external-link-black-24x24.png);
+    background-size: 12px 400px;
+  }
+}
+/*
+ * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ *    note - font-size reduced to 62.5% to allow simple rem/px font-sizing and fallback
+ *    http://snook.ca/archives/html_and_css/font-size-with-rem
+ * 2. Keeps page centred in all browsers regardless of content height
+ * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
+ *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ */
+/* line 187, ../../../assets/stylesheets/govuk/govuk-template.scss */
+html {
+  font-size: 62.5%;
+  /* 1 */
+  overflow-y: scroll;
+  /* 2 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 3 */
+}
+
+/*
+ * 1. Font-size increased to compensate for change to html element font-size in
+ *    order to support beta typography which was set in ems
+ *    (62.5% * 160% = 100%)
+ * 2. Addresses margins handled incorrectly in IE6/7
+ */
+/* line 201, ../../../assets/stylesheets/govuk/govuk-template.scss */
+body {
+  font-size: 160%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/* line 208, ../../../assets/stylesheets/govuk/govuk-template.scss */
+b,
+strong {
+  font-weight: 600;
+}
+
+/* line 211, ../../../assets/stylesheets/govuk/govuk-template.scss */
+img {
+  border: 0;
+}
+
+/* line 214, ../../../assets/stylesheets/govuk/govuk-template.scss */
+button {
+  *overflow: visible;
+}
+
+/* line 217, ../../../assets/stylesheets/govuk/govuk-template.scss */
+abbr[title] {
+  cursor: help;
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 225, ../../../assets/stylesheets/govuk/govuk-template.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/* line 233, ../../../assets/stylesheets/govuk/govuk-template.scss */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+  margin-right: 2px;
+}
+
+/* line 237, ../../../assets/stylesheets/govuk/govuk-template.scss */
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* For image replacement */
+/* line 241, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.ir {
+  display: block;
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+}
+
+/* line 248, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.ir br {
+  display: none;
+}
+
+/* Hide for both screenreaders and browsers */
+/* line 252, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+/* line 257, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.visuallyhidden {
+  position: absolute;
+  left: -9999em;
+  /*
+   * Extends the .visuallyhidden class to allow the element to be
+   * focusable when navigated to via the keyboard
+   */
+}
+
+/* line 264, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 273, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* Give a strong clear visual idea as to what is currently in focus */
+/* line 277, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a, .fake-link, .js-enabled .identity-evidence-content .dialog-cancel, .link-text {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+/* line 280, ../../../assets/stylesheets/govuk/govuk-template.scss */
+a:focus, .fake-link:focus, .js-enabled .identity-evidence-content .dialog-cancel:focus, .link-text:focus {
+  background-color: #ffbf47;
+  outline: 3px solid #ffbf47;
+}
+
+/* Make skiplinks visible when they are tabbed to */
+/* line 285, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.skiplink {
+  position: absolute;
+  left: -9999em;
+}
+
+/* line 289, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.skiplink:focus {
+  position: static;
+}
+
+/* line 292, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#skiplink-container {
+  text-align: center;
+  background: #0b0c0c;
+}
+
+/* line 295, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#skiplink-container div {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 1020px;
+}
+
+/* line 299, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#skiplink-container .skiplink {
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin: 0.75em 0 0 30px;
+}
+
+/* line 307, ../../../assets/stylesheets/govuk/govuk-template.scss */
+input:focus,
+textarea:focus,
+select:focus,
+#global-header input:focus {
+  outline: 3px solid #ffbf47;
+}
+
+/* line 310, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header h1 a:focus, #global-header h1 .fake-link:focus, #global-header h1 .js-enabled .identity-evidence-content .dialog-cancel:focus, .js-enabled .identity-evidence-content #global-header h1 .dialog-cancel:focus, #global-header h1 .link-text:focus {
+  background-color: transparent;
+  outline: none;
+}
+
+/* line 313, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header a:focus, #global-header .fake-link:focus, #global-header .js-enabled .identity-evidence-content .dialog-cancel:focus, .js-enabled .identity-evidence-content #global-header .dialog-cancel:focus, #global-header .link-text:focus {
+  color: #0b0c0c;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* line 342, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-wrapper:after, #global-header .header-wrapper .header-global:after, #global-header .header-wrapper .header-global .header-logo:after, #global-header .header-proposition #proposition-links:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 347, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header {
+  background-color: #0b0c0c;
+  width: 100%;
+}
+
+/* line 350, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-wrapper {
+  max-width: 990px;
+  margin: 0 auto;
+  padding: 0.5em 15px;
+}
+
+@media (max-width: 640px) {
+  /* line 355, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-wrapper {
+    padding: 0.5em 0;
+  }
+}
+/* line 357, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-wrapper .header-global .header-logo {
+  width: 49%;
+  float: left;
+}
+
+@media (min-width: 769px) {
+  /* line 361, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-wrapper .header-global .header-logo {
+    width: 33.33%;
+  }
+}
+@media screen and (max-width: 379px) {
+  /* line 364, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-wrapper .header-global .header-logo {
+    width: auto;
+    float: none;
+  }
+}
+/* line 367, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-wrapper .header-global .header-logo .content {
+  margin: 0 15px;
+}
+
+/* line 369, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-wrapper .header-global .header-logo {
+  margin: 5px 0 2px;
+}
+
+@media (min-width: 769px) {
+  /* line 372, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header.with-proposition .header-wrapper .header-global {
+    float: left;
+    width: 33.33%;
+  }
+
+  /* line 376, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header.with-proposition .header-wrapper .header-global .header-logo,
+  #global-header.with-proposition .header-wrapper .header-global .site-search {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  /* line 379, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header.with-proposition .header-wrapper .header-proposition {
+    width: 66.66%;
+    float: left;
+  }
+}
+/* line 382, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header.with-proposition .header-wrapper .header-proposition .content {
+  margin: 0 15px;
+}
+
+/* line 384, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header #logo {
+  float: left;
+  position: relative;
+  top: 1px;
+  height: 30px;
+  overflow: visible;
+  vertical-align: baseline;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1em;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+}
+
+/* line 399, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header #logo img {
+  position: relative;
+  top: -2px;
+  width: 35px;
+  height: 31px;
+  padding-right: 6px;
+  float: left;
+  display: inline;
+  line-height: inherit;
+  border: none;
+}
+
+/* line 409, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header #logo:hover, #global-header #logo:focus {
+  text-decoration: none;
+  border-bottom: 1px solid;
+  padding-bottom: 0;
+}
+
+/* line 413, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header #logo:active {
+  color: #2b8cc4;
+}
+
+/* line 415, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition {
+  padding-top: 10px;
+}
+
+@media (min-width: 769px) {
+  /* line 418, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition {
+    padding-top: 0;
+  }
+}
+/* line 420, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-name {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  /* line 430, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition #proposition-name {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+/* line 433, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition a.menu, #global-header .header-proposition .menu.fake-link, #global-header .header-proposition .js-enabled .identity-evidence-content .menu.dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition .menu.dialog-cancel, #global-header .header-proposition .menu.link-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  color: white;
+  display: block;
+  float: right;
+  text-decoration: none;
+  padding-top: 6px;
+}
+
+@media (max-width: 640px) {
+  /* line 445, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition a.menu, #global-header .header-proposition .menu.fake-link, #global-header .header-proposition .js-enabled .identity-evidence-content .menu.dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition .menu.dialog-cancel, #global-header .header-proposition .menu.link-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (min-width: 769px) {
+  /* line 449, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition a.menu, #global-header .header-proposition .menu.fake-link, #global-header .header-proposition .js-enabled .identity-evidence-content .menu.dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition .menu.dialog-cancel, #global-header .header-proposition .menu.link-text {
+    display: none;
+  }
+}
+/* line 451, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition a.menu:hover, #global-header .header-proposition .menu.fake-link:hover, #global-header .header-proposition .js-enabled .identity-evidence-content .menu.dialog-cancel:hover, .js-enabled .identity-evidence-content #global-header .header-proposition .menu.dialog-cancel:hover, #global-header .header-proposition .menu.link-text:hover {
+  text-decoration: underline;
+}
+
+/* line 453, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition a.menu:after, #global-header .header-proposition .menu.fake-link:after, #global-header .header-proposition .js-enabled .identity-evidence-content .menu.dialog-cancel:after, .js-enabled .identity-evidence-content #global-header .header-proposition .menu.dialog-cancel:after, #global-header .header-proposition .menu.link-text:after {
+  display: inline-block;
+  font-size: 8px;
+  height: 8px;
+  padding-left: 5px;
+  vertical-align: middle;
+  content: " \25BC";
+}
+
+/* line 460, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition a.menu.js-hidden:after, #global-header .header-proposition .menu.js-hidden.fake-link:after, #global-header .header-proposition .js-enabled .identity-evidence-content .menu.js-hidden.dialog-cancel:after, .js-enabled .identity-evidence-content #global-header .header-proposition .menu.js-hidden.dialog-cancel:after, #global-header .header-proposition .menu.js-hidden.link-text:after {
+  content: " \25B2";
+}
+
+/* line 462, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-menu {
+  margin-top: 5px;
+}
+
+/* line 464, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-links {
+  clear: both;
+  margin: 2px 0 0 0;
+  padding: 0;
+}
+
+/* line 468, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.js-enabled #global-header .header-proposition #proposition-links {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  /* line 471, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  .js-enabled #global-header .header-proposition #proposition-links {
+    display: block;
+  }
+}
+/* line 473, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.js-enabled #global-header .header-proposition #proposition-links.js-visible {
+  display: block;
+}
+
+/* line 475, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-links li {
+  float: left;
+  width: 50%;
+  padding: 3px 0;
+  border-bottom: 1px solid #2e3133;
+}
+
+@media (min-width: 769px) {
+  /* line 481, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition #proposition-links li {
+    display: block;
+    width: auto;
+    padding: 0 15px 0 0;
+    border-bottom: 0;
+  }
+
+  /* line 486, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition #proposition-links li.clear-child {
+    clear: left;
+  }
+}
+/* line 488, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-links li a, #global-header .header-proposition #proposition-links li .fake-link, #global-header .header-proposition #proposition-links li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition #proposition-links li .dialog-cancel, #global-header .header-proposition #proposition-links li .link-text {
+  color: white;
+  text-decoration: none;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  /* line 498, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition #proposition-links li a, #global-header .header-proposition #proposition-links li .fake-link, #global-header .header-proposition #proposition-links li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition #proposition-links li .dialog-cancel, #global-header .header-proposition #proposition-links li .link-text {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+@media (min-width: 769px) {
+  /* line 502, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition #proposition-links li a, #global-header .header-proposition #proposition-links li .fake-link, #global-header .header-proposition #proposition-links li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition #proposition-links li .dialog-cancel, #global-header .header-proposition #proposition-links li .link-text {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 300;
+    text-transform: none;
+    font-weight: 700;
+    line-height: 23px;
+  }
+}
+@media (min-width: 769px) and (max-width: 640px) {
+  /* line 511, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-header .header-proposition #proposition-links li a, #global-header .header-proposition #proposition-links li .fake-link, #global-header .header-proposition #proposition-links li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition #proposition-links li .dialog-cancel, #global-header .header-proposition #proposition-links li .link-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 514, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-links li a:hover, #global-header .header-proposition #proposition-links li .fake-link:hover, #global-header .header-proposition #proposition-links li .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content #global-header .header-proposition #proposition-links li .dialog-cancel:hover, #global-header .header-proposition #proposition-links li .link-text:hover {
+  text-decoration: underline;
+}
+
+/* line 516, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-header .header-proposition #proposition-links li a.active, #global-header .header-proposition #proposition-links li .active.fake-link, #global-header .header-proposition #proposition-links li .js-enabled .identity-evidence-content .active.dialog-cancel, .js-enabled .identity-evidence-content #global-header .header-proposition #proposition-links li .active.dialog-cancel, #global-header .header-proposition #proposition-links li .active.link-text {
+  color: #28a197;
+}
+
+/* Global cookie message */
+/* line 520, ../../../assets/stylesheets/govuk/govuk-template.scss */
+.js-enabled #global-cookie-message {
+  display: none;
+  /* shown with JS, always on for non-JS */
+}
+
+/* line 524, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-cookie-message {
+  padding: 0.5em 2em;
+  background-color: #d5e8f3;
+}
+
+/* line 527, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#global-cookie-message p, #global-cookie-message .label-help, #global-cookie-message .submit, #global-cookie-message .application-notice .title, .application-notice #global-cookie-message .title, #global-cookie-message details summary, details #global-cookie-message summary, #global-cookie-message .details .summary, .details #global-cookie-message .summary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+@media (max-width: 640px) {
+  /* line 536, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-cookie-message p, #global-cookie-message .label-help, #global-cookie-message .submit, #global-cookie-message .application-notice .title, .application-notice #global-cookie-message .title, #global-cookie-message details summary, details #global-cookie-message summary, #global-cookie-message .details .summary, .details #global-cookie-message .summary {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+@media (max-width: 640px) {
+  /* line 540, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #global-cookie-message {
+    padding: 0.5em 1em;
+  }
+}
+/* Global footer */
+/* line 544, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer {
+  background-color: #dee0e2;
+  border-top: 1px solid #a1acb2;
+}
+
+/* line 547, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-wrapper {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 60px 1em 0 1em;
+}
+
+@media (max-width: 640px) {
+  /* line 552, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-wrapper {
+    padding-top: 20px;
+  }
+}
+/* line 554, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer a, #footer .fake-link, #footer .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .dialog-cancel, #footer .link-text {
+  color: #454a4c;
+}
+
+/* line 556, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer a:hover, #footer .fake-link:hover, #footer .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content #footer .dialog-cancel:hover, #footer .link-text:hover {
+  color: #171819;
+}
+
+/* line 558, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer h2, #footer legend {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+  color: #171819;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  /* line 568, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer h2, #footer legend {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+/* line 571, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer h2 a, #footer legend a, #footer h2 .fake-link, #footer legend .fake-link, #footer h2 .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer h2 .dialog-cancel, #footer legend .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer legend .dialog-cancel, #footer h2 .link-text, #footer legend .link-text {
+  color: inherit;
+}
+
+/* line 573, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta {
+  clear: both;
+  font-size: 0;
+  color: #454a4c;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 640px) {
+  /* line 579, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta {
+    margin: 0;
+  }
+}
+/* line 581, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 75%;
+}
+
+@media (max-width: 640px) {
+  /* line 586, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner {
+    display: block;
+    width: 100%;
+  }
+}
+/* line 589, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner ul {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 300;
+  text-transform: none;
+  display: inline-block;
+  list-style: none;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  /* line 600, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner ul {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+/* line 603, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner ul li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+
+@media (max-width: 640px) {
+  /* line 607, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner ul {
+    width: auto;
+    margin: 0 0 1.5em 0;
+  }
+}
+/* line 610, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner .open-government-licence {
+  clear: left;
+  position: relative;
+  padding-left: 53px;
+}
+
+@media (max-width: 640px) {
+  /* line 615, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner .open-government-licence {
+    padding-left: 0;
+  }
+}
+/* line 617, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner .open-government-licence h2, #footer .footer-meta .footer-meta-inner .open-government-licence legend {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 41px;
+  height: 100%;
+}
+
+@media (max-width: 640px) {
+  /* line 624, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner .open-government-licence h2, #footer .footer-meta .footer-meta-inner .open-government-licence legend {
+    position: static;
+    width: auto;
+    margin-bottom: 1em;
+  }
+}
+/* line 628, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner .open-government-licence h2 a, #footer .footer-meta .footer-meta-inner .open-government-licence legend a, #footer .footer-meta .footer-meta-inner .open-government-licence h2 .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence legend .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence h2 .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence h2 .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence legend .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence legend .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence h2 .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence legend .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence h2 img, #footer .footer-meta .footer-meta-inner .open-government-licence legend img {
+  display: block;
+  width: 43px;
+  height: 17px;
+}
+
+/* line 632, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner .open-government-licence p, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help, #footer .footer-meta .footer-meta-inner .open-government-licence .submit, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title, #footer .footer-meta .footer-meta-inner .open-government-licence details summary, details #footer .footer-meta .footer-meta-inner .open-government-licence summary, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0;
+  padding-top: 0.1em;
+}
+
+@media (max-width: 640px) {
+  /* line 641, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner .open-government-licence p, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help, #footer .footer-meta .footer-meta-inner .open-government-licence .submit, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title, #footer .footer-meta .footer-meta-inner .open-government-licence details summary, details #footer .footer-meta .footer-meta-inner .open-government-licence summary, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 644, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .footer-meta-inner .open-government-licence p a, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help a, #footer .footer-meta .footer-meta-inner .open-government-licence .submit a, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title a, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title a, #footer .footer-meta .footer-meta-inner .open-government-licence details summary a, details #footer .footer-meta .footer-meta-inner .open-government-licence summary a, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary a, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary a, #footer .footer-meta .footer-meta-inner .open-government-licence p .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .fake-link, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .fake-link, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .fake-link, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence p .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence p .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .submit .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .dialog-cancel, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence details summary .dialog-cancel, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content details #footer .footer-meta .footer-meta-inner .open-government-licence summary .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .dialog-cancel, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence p .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .link-text, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .link-text, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .link-text, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .link-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-weight: 400;
+  text-transform: none;
+}
+
+@media (max-width: 640px) {
+  /* line 651, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner .open-government-licence p a, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help a, #footer .footer-meta .footer-meta-inner .open-government-licence .submit a, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title a, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title a, #footer .footer-meta .footer-meta-inner .open-government-licence details summary a, details #footer .footer-meta .footer-meta-inner .open-government-licence summary a, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary a, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary a, #footer .footer-meta .footer-meta-inner .open-government-licence p .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .fake-link, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .fake-link, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .fake-link, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence p .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence p .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .submit .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .dialog-cancel, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence details summary .dialog-cancel, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content details #footer .footer-meta .footer-meta-inner .open-government-licence summary .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .dialog-cancel, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence p .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .link-text, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .link-text, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .link-text, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .link-text {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+@media (max-width: 640px) {
+  /* line 655, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .footer-meta-inner .open-government-licence p a, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help a, #footer .footer-meta .footer-meta-inner .open-government-licence .submit a, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title a, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title a, #footer .footer-meta .footer-meta-inner .open-government-licence details summary a, details #footer .footer-meta .footer-meta-inner .open-government-licence summary a, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary a, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary a, #footer .footer-meta .footer-meta-inner .open-government-licence p .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .fake-link, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .fake-link, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .fake-link, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .fake-link, #footer .footer-meta .footer-meta-inner .open-government-licence p .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence p .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .submit .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .dialog-cancel, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence details summary .dialog-cancel, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content details #footer .footer-meta .footer-meta-inner .open-government-licence summary .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .dialog-cancel, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .dialog-cancel, #footer .footer-meta .footer-meta-inner .open-government-licence p .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .label-help .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .submit .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .application-notice .title .link-text, .application-notice #footer .footer-meta .footer-meta-inner .open-government-licence .title .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence details summary .link-text, details #footer .footer-meta .footer-meta-inner .open-government-licence summary .link-text, #footer .footer-meta .footer-meta-inner .open-government-licence .details .summary .link-text, .details #footer .footer-meta .footer-meta-inner .open-government-licence .summary .link-text {
+    font-size: 1em;
+  }
+}
+/* line 657, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .copyright {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  display: inline-block;
+  float: none;
+  text-align: inherit;
+  width: 25%;
+  padding-top: 15px;
+}
+
+@media (max-width: 640px) {
+  /* line 669, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .copyright {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 672, ../../../assets/stylesheets/govuk/govuk-template.scss */
+#footer .footer-meta .copyright a, #footer .footer-meta .copyright .fake-link, #footer .footer-meta .copyright .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .copyright .dialog-cancel, #footer .footer-meta .copyright .link-text {
+  display: block;
+  padding: 115px 0 0 0;
+  background: transparent url(images/govuk-crest.png) no-repeat 100% 0;
+  text-align: right;
+  text-decoration: none;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 679, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .copyright a, #footer .footer-meta .copyright .fake-link, #footer .footer-meta .copyright .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .copyright .dialog-cancel, #footer .footer-meta .copyright .link-text {
+    background-image: url(images/govuk-crest-2x.png);
+    background-size: 125px 102px;
+  }
+}
+@media (max-width: 640px) {
+  /* line 683, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .copyright {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 30px 0 0 0;
+  }
+
+  /* line 688, ../../../assets/stylesheets/govuk/govuk-template.scss */
+  #footer .footer-meta .copyright a, #footer .footer-meta .copyright .fake-link, #footer .footer-meta .copyright .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #footer .footer-meta .copyright .dialog-cancel, #footer .footer-meta .copyright .link-text {
+    text-align: center;
+    background-position: 50% 0%;
+  }
+}
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/*
+
+Mixin and defaults for making buttons on GOV.UK services.
+
+For guidance, see: https://www.gov.uk/service-manual/design-and-content/resources/buttons.html
+
+Example usage:
+
+.button{
+  @include button;
+}
+.button-secondary{
+  @include button($grey-3);
+}
+.button-warning{
+  @include button($red);
+}
+
+*/
+/* Player overrides */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/*
+
+Mixin and defaults for making buttons on GOV.UK services.
+
+For guidance, see: https://www.gov.uk/service-manual/design-and-content/resources/buttons.html
+
+Example usage:
+
+.button{
+  @include button;
+}
+.button-secondary{
+  @include button($grey-3);
+}
+.button-warning{
+  @include button($red);
+}
+
+*/
+/* Player overrides */
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 6, ../../../assets/stylesheets/modules/_message_box.scss */
+html, body {
+  overflow: auto;
+  height: auto;
+}
+
+/* line 15, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .message-box-on body, .js-enabled .message-box-on {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 22, ../../../assets/stylesheets/modules/_message_box.scss */
+.fake-link, .js-enabled .identity-evidence-content .dialog-cancel {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 2, ../../../assets/stylesheets/core/_reset.scss */
+.inner.container *, .inner.container *:before, .inner.container *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../../../assets/stylesheets/core/_reset.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 2, ../../../assets/stylesheets/core/_shared.scss */
+.clearfix:before, .full-width:before, .group:before, .application-notice:before, aside .page-navigation:before, .pagination:before, .services-icons:before, .register-signin-container:before, .identity-evidence .evidence-and-company:before, .identity-evidence .company-selector:before,
+.clearfix:after,
+.full-width:after,
+.group:after,
+.application-notice:after,
+aside .page-navigation:after,
+.pagination:after,
+.services-icons:after,
+.register-signin-container:after,
+.identity-evidence .evidence-and-company:after,
+.identity-evidence .company-selector:after {
+  content: "";
+  display: table;
+}
+
+/* line 6, ../../../assets/stylesheets/core/_shared.scss */
+.clearfix:after, .full-width:after, .group:after, .application-notice:after, aside .page-navigation:after, .pagination:after, .services-icons:after, .register-signin-container:after, .identity-evidence .evidence-and-company:after, .identity-evidence .company-selector:after {
+  clear: both;
+}
+
+/* line 9, ../../../assets/stylesheets/core/_shared.scss */
+.clearfix, .full-width, .group, .application-notice, aside .page-navigation, .pagination, .services-icons, .register-signin-container, .identity-evidence .evidence-and-company, .identity-evidence .company-selector {
+  *zoom: 1;
+}
+
+/* line 13, ../../../assets/stylesheets/core/_shared.scss */
+.hide-text {
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* line 20, ../../../assets/stylesheets/core/_shared.scss */
+.js-enabled .js-hide {
+  display: none;
+}
+
+/* line 25, ../../../assets/stylesheets/core/_shared.scss */
+.js-show {
+  display: none;
+}
+/* line 27, ../../../assets/stylesheets/core/_shared.scss */
+.js-enabled .js-show {
+  display: block;
+}
+
+/* line 32, ../../../assets/stylesheets/core/_shared.scss */
+button:focus, .button:focus, details summary:focus, .details .summary:focus {
+  outline: 3px solid #ffbf47;
+}
+
+/* line 36, ../../../assets/stylesheets/core/_shared.scss */
+.example, .company-quote {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #bfc1c3;
+  outline: 15px solid #f8f8f8;
+  margin: 30px 0 60px 0;
+  padding: 15px;
+}
+
+/* line 45, ../../../assets/stylesheets/core/_shared.scss */
+.hide {
+  display: none;
+}
+
+/* line 2, ../../../assets/stylesheets/core/_buttons.scss */
+button:hover, .button:hover {
+  cursor: pointer;
+}
+
+/* line 10, ../../../assets/stylesheets/core/_buttons.scss */
+.button {
+  background-color: #00823b;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.35em 0.5em 0.15em 0.5em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: white;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 2em;
+  font-weight: bold;
+  background-image: url("/assets/images/govuk/icon-pointer.png");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+}
+/* line 51, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button:visited {
+  background-color: #00823b;
+}
+/* line 55, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button:hover, .button:focus {
+  background-color: #00692f;
+}
+/* line 58, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #00823b;
+  -moz-box-shadow: 0 0 0 #00823b;
+  box-shadow: 0 0 0 #00823b;
+}
+/* line 66, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button.disabled, .button[disabled="disabled"], .button[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 68, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button.disabled:hover, .button[disabled="disabled"]:hover, .button[disabled]:hover {
+  cursor: default;
+  background-color: #00823b;
+}
+/* line 72, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button.disabled:active, .button[disabled="disabled"]:active, .button[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #003518;
+  -moz-box-shadow: 0 2px 0 #003518;
+  box-shadow: 0 2px 0 #003518;
+}
+/* line 87, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button:link, .button:hover, .button:focus, .button:visited {
+  color: white;
+}
+/* line 102, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 112, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 125, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.button[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 640px) {
+  /* line 10, ../../../assets/stylesheets/core/_buttons.scss */
+  .button {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+/* line 24, ../../../assets/stylesheets/core/_buttons.scss */
+.button:active {
+  height: auto;
+}
+
+/* line 31, ../../../assets/stylesheets/core/_buttons.scss */
+.link-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  background: transparent;
+  text-decoration: underline;
+  padding: 0;
+  border: 0;
+}
+@media (max-width: 640px) {
+  /* line 31, ../../../assets/stylesheets/core/_buttons.scss */
+  .link-text {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 42, ../../../assets/stylesheets/core/_buttons.scss */
+.destination {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-weight: 400;
+  text-transform: none;
+  color: #2e3133;
+  display: block;
+  margin-top: 0.5em;
+}
+@media (max-width: 640px) {
+  /* line 42, ../../../assets/stylesheets/core/_buttons.scss */
+  .destination {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+}
+
+/* line 1, ../../../assets/stylesheets/core/_typography.scss */
+p, .label-help, .submit, .application-notice .title, details summary, .details .summary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 1, ../../../assets/stylesheets/core/_typography.scss */
+  p, .label-help, .submit, .application-notice .title, details summary, .details .summary {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 5, ../../../assets/stylesheets/core/_typography.scss */
+img {
+  border: 0;
+}
+
+/* line 11, ../../../assets/stylesheets/core/_typography.scss */
+article h2, .identity-evidence .application-notice h2, article legend, .identity-evidence .application-notice legend {
+  margin: 1.2em 0 0.4em 0;
+}
+/* line 14, ../../../assets/stylesheets/core/_typography.scss */
+article h3, .identity-evidence .application-notice h3 {
+  margin: 1em 0 0.75em 0;
+}
+/* line 17, ../../../assets/stylesheets/core/_typography.scss */
+article h4, .identity-evidence .application-notice h4 {
+  margin: 1.5em 0 0 0;
+}
+/* line 21, ../../../assets/stylesheets/core/_typography.scss */
+article p, .identity-evidence .application-notice p, article .label-help, .identity-evidence .application-notice .label-help, article .submit, .identity-evidence .application-notice .submit, article .application-notice .title, .application-notice article .title, .identity-evidence .application-notice .title, article details summary, details article summary, .identity-evidence .application-notice details summary, details .identity-evidence .application-notice summary, article .details .summary, .details article .summary, .identity-evidence .application-notice .details .summary, .details .identity-evidence .application-notice .summary {
+  margin: 0.2em 0 0.75em 0;
+}
+/* line 25, ../../../assets/stylesheets/core/_typography.scss */
+article ul, .identity-evidence .application-notice ul {
+  padding-left: 1em;
+  margin: 0.75em 0;
+  list-style-type: circle;
+  list-style-image: url("/assets/images/govuk/bullet-disc-5px.gif");
+}
+/* line 31, ../../../assets/stylesheets/core/_typography.scss */
+article li, .identity-evidence .application-notice li {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  text-transform: none;
+  margin: 0.25em 0;
+  padding-left: 0.3em;
+}
+@media (max-width: 640px) {
+  /* line 31, ../../../assets/stylesheets/core/_typography.scss */
+  article li, .identity-evidence .application-notice li {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+/* line 2, ../../../assets/stylesheets/core/_layout.scss */
+header.page-header .skip-to-related {
+  position: absolute;
+  left: -9999em;
+}
+/* line 5, ../../../assets/stylesheets/core/_layout.scss */
+header.page-header .skip-to-related:focus {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  left: 32px;
+  top: -2em;
+}
+@media (max-width: 640px) {
+  /* line 2, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header .skip-to-related {
+    position: relative;
+    display: -moz-inline-stack;
+    display: inline-block;
+    left: 1em;
+    top: -1em;
+  }
+}
+/* line 18, ../../../assets/stylesheets/core/_layout.scss */
+header.page-header div {
+  background-color: #fff;
+  margin: 0;
+  padding-bottom: 0;
+}
+@media screen and (min-width: 640px) {
+  /* line 18, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div {
+    padding: 2em 0 2em 0;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 18, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div {
+  }
+}
+/* line 29, ../../../assets/stylesheets/core/_layout.scss */
+header.page-header div h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.04167;
+  font-weight: 400;
+  text-transform: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-repeat: no-repeat;
+  color: #0b0c0c;
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  /* line 29, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div h1 {
+    font-size: 32px;
+    line-height: 1.09375;
+  }
+}
+@media (min-width: 641px) {
+  /* line 29, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div h1 {
+    padding-top: 7px;
+    padding-bottom: 13px;
+  }
+}
+@media screen and (min-width: 641px) {
+  /* line 29, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div h1 {
+    padding-top: 0;
+  }
+}
+/* line 37, ../../../assets/stylesheets/core/_layout.scss */
+header.page-header div h1 span {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin-bottom: 0.25em;
+  text-shadow: none;
+  color: #6f777b;
+}
+@media (max-width: 640px) {
+  /* line 37, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div h1 span {
+    font-size: 18px;
+    line-height: 1.11111;
+  }
+}
+@media screen and (min-width: 641px) {
+  /* line 37, ../../../assets/stylesheets/core/_layout.scss */
+  header.page-header div h1 span {
+    padding-bottom: 7px;
+  }
+}
+
+/* line 54, ../../../assets/stylesheets/core/_layout.scss */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 58, ../../../assets/stylesheets/core/_layout.scss */
+.container {
+  margin: 0 auto;
+}
+@media screen and (min-width: 640px) {
+  /* line 58, ../../../assets/stylesheets/core/_layout.scss */
+  .container {
+    max-width: 1020px;
+  }
+}
+/* line 66, ../../../assets/stylesheets/core/_layout.scss */
+.container.inner {
+  position: relative;
+  z-index: 2;
+  padding-top: 20px;
+}
+
+/* line 76, ../../../assets/stylesheets/core/_layout.scss */
+.full-width {
+  padding: 0 0.9375em 1.875em 0.9375em;
+}
+@media screen and (min-width: 641px) {
+  /* line 76, ../../../assets/stylesheets/core/_layout.scss */
+  .full-width {
+    padding: 0 1.875em 2.8125em 1.875em;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  /* line 88, ../../../assets/stylesheets/core/_layout.scss */
+  .article-container {
+    max-width: 576px;
+  }
+}
+@media screen and (min-width: 800px) {
+  /* line 88, ../../../assets/stylesheets/core/_layout.scss */
+  .article-container {
+    margin-right: 22.25em;
+  }
+}
+@media screen and (min-width: 640px) {
+  /* line 88, ../../../assets/stylesheets/core/_layout.scss */
+  .article-container {
+    min-height: 35em;
+    height: auto !important;
+    height: 35em;
+  }
+}
+
+/* line 109, ../../../assets/stylesheets/core/_layout.scss */
+#footer {
+  position: relative;
+  z-index: 0;
+}
+/* line 112, ../../../assets/stylesheets/core/_layout.scss */
+#footer img {
+  border: 0;
+}
+
+/* line 117, ../../../assets/stylesheets/core/_layout.scss */
+.footer-meta-inner .link-text {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 117, ../../../assets/stylesheets/core/_layout.scss */
+  .footer-meta-inner .link-text {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 1, ../../../assets/stylesheets/core/_forms.scss */
+legend {
+  padding-bottom: 0.5em;
+}
+
+/* line 9, ../../../assets/stylesheets/core/_forms.scss */
+.group.validation {
+  background-color: #fef7f7;
+  border-left: 3px solid #df3034;
+  margin: 0 -1em 0.5em -1em;
+  padding: 0.75em 1em 1em 1em;
+}
+
+/* line 23, ../../../assets/stylesheets/core/_forms.scss */
+.validation-message {
+  display: none;
+}
+/* line 26, ../../../assets/stylesheets/core/_forms.scss */
+.validation .validation-message {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  display: block;
+  color: #df3034;
+  padding-bottom: 0.5em;
+}
+@media (max-width: 640px) {
+  /* line 26, ../../../assets/stylesheets/core/_forms.scss */
+  .validation .validation-message {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 34, ../../../assets/stylesheets/core/_forms.scss */
+label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin: 0 0 4px 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 640px) {
+  /* line 34, ../../../assets/stylesheets/core/_forms.scss */
+  label {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 40, ../../../assets/stylesheets/core/_forms.scss */
+label.check {
+  font-weight: normal;
+  float: none;
+}
+
+/* line 46, ../../../assets/stylesheets/core/_forms.scss */
+.label-help {
+  display: block;
+  padding: 0;
+  margin: 0 0 0.75em 0;
+}
+
+/* line 53, ../../../assets/stylesheets/core/_forms.scss */
+.field {
+  width: 100%;
+  padding: 0.375em 0.5em;
+  background-color: white;
+  border: 1px solid #dee0e2;
+  box-shadow: inset 0 0.05em 0.65em rgba(0, 0, 0, 0.055);
+  font: 1em/1.5 sans-serif;
+}
+@media screen and (min-width: 640px) {
+  /* line 53, ../../../assets/stylesheets/core/_forms.scss */
+  .field {
+    width: 50%;
+  }
+  /* line 57, ../../../assets/stylesheets/core/_forms.scss */
+  .field.small {
+    width: 5em;
+  }
+  /* line 60, ../../../assets/stylesheets/core/_forms.scss */
+  .field.medium {
+    width: 15em;
+  }
+  /* line 63, ../../../assets/stylesheets/core/_forms.scss */
+  .field.large {
+    width: 20em;
+  }
+}
+
+/* line 74, ../../../assets/stylesheets/core/_forms.scss */
+input[type="text"] {
+  display: block;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  margin: 0 0 1em 0;
+  border: 1px solid #bbbbbb;
+  padding: 0.3em 0 0.1em 0.4em;
+}
+@media (max-width: 640px) {
+  /* line 74, ../../../assets/stylesheets/core/_forms.scss */
+  input[type="text"] {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 85, ../../../assets/stylesheets/core/_forms.scss */
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+/* line 88, ../../../assets/stylesheets/core/_forms.scss */
+input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* line 96, ../../../assets/stylesheets/core/_forms.scss */
+fieldset div {
+  margin: 0 0 1em 0;
+}
+/* line 99, ../../../assets/stylesheets/core/_forms.scss */
+fieldset abbr[title="Required"] {
+  color: #900;
+  font: normal 1.25em/0.1 sans-serif;
+  border-bottom: 0 none;
+}
+/* line 104, ../../../assets/stylesheets/core/_forms.scss */
+fieldset em {
+  display: block;
+  margin: 4px 0 0 0;
+  color: #3c4141;
+  font-style: normal;
+  font-size: 0.875em;
+  line-height: 1em;
+}
+/* line 112, ../../../assets/stylesheets/core/_forms.scss */
+fieldset.options {
+  clear: left;
+}
+/* line 114, ../../../assets/stylesheets/core/_forms.scss */
+fieldset.options ul {
+  margin: 0.25em 0;
+  list-style: none;
+}
+/* line 117, ../../../assets/stylesheets/core/_forms.scss */
+fieldset.options ul li {
+  margin-left: 0;
+}
+/* line 120, ../../../assets/stylesheets/core/_forms.scss */
+fieldset.options ul label {
+  float: none;
+  width: auto;
+  font-weight: normal;
+}
+
+/* line 129, ../../../assets/stylesheets/core/_forms.scss */
+.submit {
+  padding: 1em 0 0 0;
+}
+
+/* line 2, ../../../assets/stylesheets/core/_tables.scss */
+article table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1em 0 1em 0;
+  width: 100%;
+}
+@media screen and (min-width: 640px) {
+  /* line 2, ../../../assets/stylesheets/core/_tables.scss */
+  article table {
+    width: 105.95%;
+    margin: 1em -1em 2em -1em;
+  }
+}
+/* line 12, ../../../assets/stylesheets/core/_tables.scss */
+article thead {
+  display: table-header-group;
+}
+/* line 16, ../../../assets/stylesheets/core/_tables.scss */
+article th small, article th, article td small, article td {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 16, ../../../assets/stylesheets/core/_tables.scss */
+  article th small, article th, article td small, article td {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 20, ../../../assets/stylesheets/core/_tables.scss */
+article th, article td {
+  vertical-align: top;
+  padding: 0.7em 0.5em 0.7em 1em;
+}
+/* line 320, ../../../assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
+article th a[rel="external"]:after, article th [rel="external"].fake-link:after, article th .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, .js-enabled .identity-evidence-content article th [rel="external"].dialog-cancel:after, article th [rel="external"].link-text:after, article td a[rel="external"]:after, article td [rel="external"].fake-link:after, article td .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, .js-enabled .identity-evidence-content article td [rel="external"].dialog-cancel:after, article td [rel="external"].link-text:after {
+  content: "\A0\A0\A0\A0\A0";
+  background-position: right 1px;
+}
+/* line 329, ../../../assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
+article th a[rel="external"]:hover:after, article th [rel="external"].fake-link:hover:after, article th .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:hover:after, .js-enabled .identity-evidence-content article th [rel="external"].dialog-cancel:hover:after, article th [rel="external"].link-text:hover:after, article td a[rel="external"]:hover:after, article td [rel="external"].fake-link:hover:after, article td .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:hover:after, .js-enabled .identity-evidence-content article td [rel="external"].dialog-cancel:hover:after, article td [rel="external"].link-text:hover:after {
+  background-position: right -387px;
+}
+@media screen and (min-width: 640px) {
+  /* line 320, ../../../assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
+  article th a[rel="external"]:after, article th [rel="external"].fake-link:after, article th .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, .js-enabled .identity-evidence-content article th [rel="external"].dialog-cancel:after, article th [rel="external"].link-text:after, article td a[rel="external"]:after, article td [rel="external"].fake-link:after, article td .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:after, .js-enabled .identity-evidence-content article td [rel="external"].dialog-cancel:after, article td [rel="external"].link-text:after {
+    content: "\A0\A0\A0\A0\A0";
+    background-position: right 3px;
+  }
+  /* line 329, ../../../assets/govuk_frontend_toolkit/stylesheets/_typography.scss */
+  article th a[rel="external"]:hover:after, article th [rel="external"].fake-link:hover:after, article th .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:hover:after, .js-enabled .identity-evidence-content article th [rel="external"].dialog-cancel:hover:after, article th [rel="external"].link-text:hover:after, article td a[rel="external"]:hover:after, article td [rel="external"].fake-link:hover:after, article td .js-enabled .identity-evidence-content [rel="external"].dialog-cancel:hover:after, .js-enabled .identity-evidence-content article td [rel="external"].dialog-cancel:hover:after, article td [rel="external"].link-text:hover:after {
+    background-position: right -385px;
+  }
+}
+/* line 31, ../../../assets/stylesheets/core/_tables.scss */
+article th {
+  line-height: 1.25em;
+  text-align: left;
+  font-weight: 700;
+  background-color: #dee0e2;
+  border: solid 1px #bfc1c3;
+}
+/* line 38, ../../../assets/stylesheets/core/_tables.scss */
+article td {
+  background: #fff;
+  border: dotted 1px #bfc1c3;
+}
+/* line 42, ../../../assets/stylesheets/core/_tables.scss */
+article tr:nth-child(even) td {
+  background-color: #f8f8f8;
+}
+
+/* line 1, ../../../assets/stylesheets/core/_related_content.scss */
+.related-content {
+  margin: 3.7em 0 0 0;
+  padding: 0.5em 1em 0 1em;
+  border-top: 10px solid #2b8cc4;
+}
+@media screen and (min-width: 800px) {
+  /* line 1, ../../../assets/stylesheets/core/_related_content.scss */
+  .related-content {
+    position: absolute;
+    top: 0;
+    right: 1.75em;
+    width: 18.75em;
+    padding-left: 0;
+  }
+}
+/* line 12, ../../../assets/stylesheets/core/_related_content.scss */
+.related-content h2, .related-content legend {
+  margin: 0.3em 0 0.5em 0;
+}
+/* line 15, ../../../assets/stylesheets/core/_related_content.scss */
+.related-content ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 19, ../../../assets/stylesheets/core/_related_content.scss */
+.related-content li {
+  font-size: 1em;
+  list-style: none;
+  margin: 0 0 0.75em 0;
+  padding: 0;
+}
+
+/* line 1, ../../../assets/stylesheets/core/_application_notice.scss */
+.application-notice {
+  margin: 0 0 1em 0;
+  padding: 1em;
+  background: none;
+  border-left: 10px #dee0e2 solid;
+}
+/* line 9, ../../../assets/stylesheets/core/_application_notice.scss */
+.application-notice.info-notice {
+  background: #efefef;
+}
+/* line 13, ../../../assets/stylesheets/core/_application_notice.scss */
+.application-notice.error-notice {
+  border-left-color: #df3034;
+  background: #fcecec;
+}
+/* line 18, ../../../assets/stylesheets/core/_application_notice.scss */
+.application-notice.success-notice {
+  border-left-color: #006435;
+  background: #cce0d6;
+}
+/* line 23, ../../../assets/stylesheets/core/_application_notice.scss */
+.application-notice p, .application-notice .label-help, .application-notice .submit, .application-notice .title, .application-notice details summary, details .application-notice summary, .application-notice .details .summary, .details .application-notice .summary {
+  font-size: 1.1875em;
+  margin: 0;
+}
+/* line 28, ../../../assets/stylesheets/core/_application_notice.scss */
+.application-notice .title {
+  font-weight: 600;
+}
+
+/* line 1, ../../../assets/stylesheets/core/_video.scss */
+.video-wrapper {
+  margin: 0 0 1.5em 0;
+  padding: 0;
+}
+
+/* line 1, ../../../assets/stylesheets/core/_loaders.scss */
+.fullwidth-loading {
+  text-align: center;
+}
+@media screen and (min-width: 800px) {
+  /* line 1, ../../../assets/stylesheets/core/_loaders.scss */
+  .fullwidth-loading {
+    margin-right: -22.25em;
+  }
+}
+/* line 6, ../../../assets/stylesheets/core/_loaders.scss */
+.fullwidth-loading p, .fullwidth-loading .label-help, .fullwidth-loading .submit, .fullwidth-loading .application-notice .title, .application-notice .fullwidth-loading .title, .fullwidth-loading details summary, details .fullwidth-loading summary, .fullwidth-loading .details .summary, .details .fullwidth-loading .summary {
+  margin: 0;
+}
+/* line 9, ../../../assets/stylesheets/core/_loaders.scss */
+.fullwidth-loading img {
+  display: block;
+  margin: 0 auto;
+}
+/* line 13, ../../../assets/stylesheets/core/_loaders.scss */
+.fullwidth-loading .ajax-loader {
+  width: 54px;
+  height: 55px;
+}
+
+/* line 6, ../../../assets/stylesheets/modules/_phase_notice.scss */
+#phase-notice {
+  padding: 8px 0;
+  background-color: #f47738;
+}
+/* line 14, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+#phase-notice p, #phase-notice .label-help, #phase-notice .submit, #phase-notice .application-notice .title, .application-notice #phase-notice .title, #phase-notice details summary, details #phase-notice summary, #phase-notice .details .summary, .details #phase-notice .summary {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  color: #0b0c0c;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  /* line 14, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+  #phase-notice p, #phase-notice .label-help, #phase-notice .submit, #phase-notice .application-notice .title, .application-notice #phase-notice .title, #phase-notice details summary, details #phase-notice summary, #phase-notice .details .summary, .details #phase-notice .summary {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 23, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+#phase-notice a, #phase-notice .fake-link, #phase-notice .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content #phase-notice .dialog-cancel, #phase-notice .link-text, #phase-notice a:link, #phase-notice .fake-link:link, #phase-notice .js-enabled .identity-evidence-content .dialog-cancel:link, .js-enabled .identity-evidence-content #phase-notice .dialog-cancel:link, #phase-notice .link-text:link, #phase-notice a:visited, #phase-notice .fake-link:visited, #phase-notice .js-enabled .identity-evidence-content .dialog-cancel:visited, .js-enabled .identity-evidence-content #phase-notice .dialog-cancel:visited, #phase-notice .link-text:visited, #phase-notice a:active, #phase-notice .fake-link:active, #phase-notice .js-enabled .identity-evidence-content .dialog-cancel:active, .js-enabled .identity-evidence-content #phase-notice .dialog-cancel:active, #phase-notice .link-text:active {
+  color: #0b0c0c;
+}
+/* line 27, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_alpha-beta.scss */
+#phase-notice a:hover, #phase-notice .fake-link:hover, #phase-notice .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content #phase-notice .dialog-cancel:hover, #phase-notice .link-text:hover {
+  color: #0b0c0c;
+}
+@media screen and (min-width: 641px) {
+  /* line 8, ../../../assets/stylesheets/modules/_phase_notice.scss */
+  #phase-notice p, #phase-notice .label-help, #phase-notice .submit, #phase-notice .application-notice .title, .application-notice #phase-notice .title, #phase-notice details summary, details #phase-notice summary, #phase-notice .details .summary, .details #phase-notice .summary {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
+}
+@media screen and (min-width: 940px) {
+  /* line 8, ../../../assets/stylesheets/modules/_phase_notice.scss */
+  #phase-notice p, #phase-notice .label-help, #phase-notice .submit, #phase-notice .application-notice .title, .application-notice #phase-notice .title, #phase-notice details summary, details #phase-notice summary, #phase-notice .details .summary, .details #phase-notice .summary {
+    width: 960px;
+  }
+}
+
+/* line 20, ../../../assets/stylesheets/modules/_phase_notice.scss */
+small.beta {
+  display: inline-block;
+  background: #f47738;
+  color: #fff;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 4px 5px 0px 6px;
+  margin-left: 0.4em;
+  vertical-align: middle;
+}
+@media screen and (min-width: 640px) {
+  /* line 20, ../../../assets/stylesheets/modules/_phase_notice.scss */
+  small.beta {
+    margin-left: 1em;
+  }
+}
+
+/* line 5, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk {
+  outline: 1px solid #bcbcbc;
+  overflow: hidden;
+}
+/* line 11, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-overlay-button {
+  display: none;
+  background-image: url("/assets/images/video/bigplay-govuk.svg");
+}
+@media screen and (min-width: 641px) {
+  /* line 11, ../../../assets/stylesheets/modules/_media-element.scss */
+  .mejs-govuk .mejs-overlay-button {
+    display: block;
+  }
+}
+/* line 18, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk.no-svg .mejs-overlay-button {
+  background-image: url("/assets/images/video/bigplay-govuk.png");
+}
+/* line 25, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-button button {
+  background-image: url("/assets/images/video/controls-govuk.svg");
+}
+/* line 28, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk.no-svg .mejs-controls .mejs-button button {
+  background-image: url("/assets/images/video/controls-govuk.png");
+}
+/* line 35, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-overlay-loading {
+  border-radius: 100px;
+}
+/* line 38, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls {
+  background: rgba(239, 239, 239, 0.8);
+}
+/* line 44, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-time span {
+  color: #0b0c0c;
+}
+/* line 48, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: rgba(11, 12, 12, 0.2);
+}
+/* line 51, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-time-rail .mejs-time-total {
+  background: #bcbcbc;
+}
+/* line 54, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: #005ea5;
+}
+/* line 59, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-horizontal-volume-slider:hover {
+  cursor: pointer;
+}
+/* line 62, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
+  background: #bcbcbc;
+}
+/* line 65, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuk .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+  background: #005ea5;
+}
+
+/* line 74, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks {
+  background: #fff;
+}
+/* line 76, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-mediaelement {
+  padding-bottom: 65px;
+}
+/* line 84, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-button, .mejs-govuks .mejs-time {
+  position: absolute;
+  background: #ddd;
+}
+/* line 88, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-overlay-loading {
+  border-radius: 100px;
+}
+/* line 92, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls {
+  background: #eee;
+  height: 65px;
+}
+/* line 96, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time-rail .mejs-time-total {
+  background-color: none;
+  background: url("/assets/images/video/controls-govuk.png") repeat-x 0 -52px;
+  height: 6px;
+}
+/* line 101, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time-rail .mejs-time-buffering {
+  height: 6px;
+}
+/* line 104, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background-color: none;
+  background: url("/assets/images/video/controls-govuk.png") repeat-x 0 -52px;
+  width: 0;
+  height: 6px;
+}
+/* line 110, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time-rail .mejs-time-current {
+  width: 0;
+  height: 6px;
+  background-color: none;
+  background: url("/assets/images/video/controls-govuk.png") repeat-x 0 -59px;
+}
+/* line 116, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time-rail .mejs-time-handle {
+  display: block;
+  width: 14px;
+  height: 21px;
+  margin: 0;
+  top: -7px;
+  border: 0;
+  background: url("/assets/images/video/controls-govuk.png") no-repeat 0 0;
+}
+/* line 125, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time-rail .mejs-time-float {
+  display: none;
+}
+/* line 129, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-playpause-button {
+  top: 29px;
+  left: 9px;
+  width: 49px;
+  height: 28px;
+}
+/* line 134, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-playpause-button button {
+  width: 49px;
+  height: 28px;
+  background: url("/assets/images/video/controls-govuk.png") no-repeat -50px -23px;
+  margin: 0;
+  padding: 0;
+}
+/* line 142, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-pause button {
+  background-position: 0 -23px;
+}
+/* line 145, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-fullscreen-button {
+  top: 34px;
+  right: 9px;
+  width: 17px;
+  height: 15px;
+  background: none;
+}
+/* line 151, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-fullscreen-button button {
+  width: 19px;
+  height: 17px;
+  background: transparent url("/assets/images/video/controls-govuk.png") no-repeat 0 -66px;
+  margin: 0;
+  padding: 0;
+}
+/* line 159, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-unfullscreen button {
+  background: transparent url("/assets/images/video/controls-govuk.png") no-repeat -21px -66px;
+  margin: 0;
+  padding: 0;
+}
+/* line 164, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-volume-button {
+  top: 30px;
+  right: 35px;
+  width: 24px;
+  height: 22px;
+}
+/* line 170, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-mute button {
+  background: url("/assets/images/video/controls-govuk.png") no-repeat -15px 0;
+  width: 24px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+}
+/* line 177, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-unmute button {
+  background: url("/assets/images/video/controls-govuk.png") no-repeat -40px 0;
+  width: 24px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+}
+/* line 185, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-volume-button .mejs-volume-slider {
+  background: #fff;
+  border: solid 1px #aaa;
+  border-width: 1px 1px 0 1px;
+  width: 22px;
+  height: 65px;
+  top: -65px;
+}
+/* line 193, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-volume-button .mejs-volume-total {
+  background: url("/assets/images/video/controls-govuk.png") repeat-y -41px -66px;
+  left: 8px;
+  width: 6px;
+  height: 50px;
+}
+/* line 199, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-volume-button .mejs-volume-current {
+  left: 8px;
+  width: 6px;
+  background: url("/assets/images/video/controls-govuk.png") repeat-y -48px -66px;
+  height: 50px;
+}
+/* line 205, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-volume-button .mejs-volume-handle {
+  display: none;
+}
+/* line 209, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time span {
+  color: #333;
+}
+/* line 212, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-currenttime-container {
+  position: absolute;
+  top: 32px;
+  right: 100px;
+  border: solid 1px #999;
+  background: #fff;
+  color: #333;
+  padding-top: 2px;
+  border-radius: 3px;
+  color: #333;
+}
+/* line 223, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-duration-container {
+  position: absolute;
+  top: 32px;
+  right: 65px;
+  border: solid 1px #999;
+  background: #fff;
+  color: #333;
+  padding-top: 2px;
+  border-radius: 3px;
+  color: #333;
+}
+/* line 234, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-time button {
+  color: #333;
+}
+/* line 237, ../../../assets/stylesheets/modules/_media-element.scss */
+.mejs-govuks .mejs-controls .mejs-captions-button {
+  display: none;
+}
+
+/* line 1, ../../../assets/stylesheets/modules/_details.scss */
+details {
+  margin: 0 0 10px 0;
+  padding: 0 0 8px 0;
+}
+/* line 4, ../../../assets/stylesheets/modules/_details.scss */
+details summary {
+  font-weight: bold;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #005ea5;
+}
+/* line 13, ../../../assets/stylesheets/modules/_details.scss */
+details summary:hover {
+  cursor: pointer;
+}
+/* line 18, ../../../assets/stylesheets/modules/_details.scss */
+details[open] summary {
+  margin-bottom: 1em;
+}
+/* line 20, ../../../assets/stylesheets/modules/_details.scss */
+details[open] summary:after {
+  -webkit-transform: rotate(-180deg);
+}
+/* line 25, ../../../assets/stylesheets/modules/_details.scss */
+details .details-content {
+  padding-right: 1em;
+}
+
+/* line 30, ../../../assets/stylesheets/modules/_details.scss */
+.details {
+  margin: 0 0 10px 0;
+  padding: 0 0 8px 0;
+}
+/* line 33, ../../../assets/stylesheets/modules/_details.scss */
+.details .summary {
+  position: relative;
+  display: none;
+  padding-left: 1em;
+  font-weight: bold;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #005ea5;
+  zoom: 1;
+}
+/* line 43, ../../../assets/stylesheets/modules/_details.scss */
+.js-enabled .details .summary {
+  display: block;
+}
+/* line 49, ../../../assets/stylesheets/modules/_details.scss */
+.details .summary:hover {
+  cursor: pointer;
+}
+/* line 52, ../../../assets/stylesheets/modules/_details.scss */
+.details .summary .arrow {
+  width: 12px;
+  height: 12px;
+  background-image: url("/assets/images/govuk/triangle-summary.png");
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2) {
+  /* line 10, ../../../assets/stylesheets/utilities/_backgrounds.scss */
+  .details .summary .arrow {
+    background-image: url("/assets/images/govuk/triangle-summary@2x.png");
+    -webkit-background-size: 12px 24px;
+  }
+}
+/* line 66, ../../../assets/stylesheets/modules/_details.scss */
+.details.open .summary {
+  margin-bottom: 1em;
+}
+/* line 68, ../../../assets/stylesheets/modules/_details.scss */
+.details.open .summary .arrow {
+  background-position: 0 -12px;
+}
+
+/* line 74, ../../../assets/stylesheets/modules/_details.scss */
+.details-content {
+  padding-right: 1em;
+}
+/* line 76, ../../../assets/stylesheets/modules/_details.scss */
+.js-enabled .details-content {
+  display: none;
+}
+/* line 79, ../../../assets/stylesheets/modules/_details.scss */
+.open .details-content {
+  display: block;
+}
+
+/* line 2, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+.matching-form-container form {
+  margin-top: 30px;
+}
+/* line 7, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+.matching-form-container form * {
+  -webkit-appearance: none;
+}
+/* line 10, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+.matching-form-container form .button {
+  float: none;
+  display: block;
+  width: 100%;
+}
+@media screen and (min-width: 640px) {
+  /* line 10, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+  .matching-form-container form .button {
+    width: auto;
+    display: inline-block;
+  }
+}
+/* line 19, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+.matching-form-container form .submit {
+  margin: 1em 0 1em 0;
+}
+/* line 23, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+.matching-form-container form label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  /* line 23, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+  .matching-form-container form label {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+/* line 29, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+.matching-form-container form input {
+  margin: 0;
+  border-radius: 0;
+  width: 100%;
+  font-size: 1.1em;
+}
+@media screen and (min-width: 640px) {
+  /* line 29, ../../../assets/stylesheets/modules/_cycle_3_single_fields.scss */
+  .matching-form-container form input {
+    width: 16em;
+    padding: 0.35em 0.5em 0.5em 0.5em;
+  }
+}
+
+/* line 1, ../../../assets/stylesheets/modules/_ajax-loader.scss */
+.ajaxLoader {
+  width: 54px;
+  height: 55px;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/*
+
+Mixin and defaults for making buttons on GOV.UK services.
+
+For guidance, see: https://www.gov.uk/service-manual/design-and-content/resources/buttons.html
+
+Example usage:
+
+.button{
+  @include button;
+}
+.button-secondary{
+  @include button($grey-3);
+}
+.button-warning{
+  @include button($red);
+}
+
+*/
+/* Player overrides */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/*
+
+Mixin and defaults for making buttons on GOV.UK services.
+
+For guidance, see: https://www.gov.uk/service-manual/design-and-content/resources/buttons.html
+
+Example usage:
+
+.button{
+  @include button;
+}
+.button-secondary{
+  @include button($grey-3);
+}
+.button-warning{
+  @include button($red);
+}
+
+*/
+/* Player overrides */
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 6, ../../../assets/stylesheets/modules/_message_box.scss */
+html, body {
+  overflow: auto;
+  height: auto;
+}
+
+/* line 15, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .message-box-on body, .js-enabled .message-box-on {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 22, ../../../assets/stylesheets/modules/_message_box.scss */
+.fake-link, .js-enabled .identity-evidence-content .dialog-cancel {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 640px) {
+  /* line 5, ../../../assets/stylesheets/modules/_overview_links.scss */
+  #content aside {
+    border-bottom: 1px solid #bfc1c3;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+  }
+}
+
+/* line 13, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .show-all-parts {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 2.36842;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  padding: 0 40px 0 16px;
+  background: transparent url("/assets/images/govuk/overview/accordian-arrow.png") 100% 6px no-repeat;
+  border-style: solid;
+  border-color: #bfc1c3;
+  border-width: 1px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media (max-width: 640px) {
+  /* line 13, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .show-all-parts {
+    font-size: 16px;
+    line-height: 3.46154;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 13, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .show-all-parts {
+    background-image: url("/assets/images/govuk/overview/accordian-arrow-2x.png");
+    background-size: 45px 90px;
+  }
+}
+@media screen and (min-width: 640px) {
+  /* line 13, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .show-all-parts {
+    display: none;
+    background: none;
+  }
+}
+/* line 37, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .show-all-parts, aside .show-all-parts:hover, aside .show-all-parts:focus {
+  text-decoration: none;
+}
+/* line 41, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .show-all-parts.show-all-parts-open {
+  background-position: 100% -40px;
+  border-bottom: none;
+}
+
+@media screen and (max-width: 640px) {
+  /* line 47, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation {
+    margin-top: 0;
+  }
+}
+/* line 55, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation ol {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 640px) {
+  /* line 55, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation ol {
+    float: left;
+    display: inline-block;
+    width: 50%;
+  }
+}
+/* line 71, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  list-style: decimal;
+  list-style-position: outside;
+  margin-right: 0.75em;
+  margin-left: 1.5em;
+  clear: left;
+}
+@media (max-width: 640px) {
+  /* line 71, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+@media (max-width: 640px) {
+  /* line 71, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li {
+    margin: 0 1em 0 2.25em;
+  }
+}
+/* line 89, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li a, aside .page-navigation li .fake-link, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel, aside .page-navigation li .link-text {
+  display: block;
+  padding: 0.25em 1em 0.25em 0;
+}
+/* line 98, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li a span, aside .page-navigation li .fake-link span, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel span, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel span, aside .page-navigation li .link-text span {
+  cursor: pointer;
+}
+/* line 105, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li a:hover span.part-title, aside .page-navigation li .fake-link:hover span.part-title, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel:hover span.part-title, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel:hover span.part-title, aside .page-navigation li .link-text:hover span.part-title, aside .page-navigation li a:focus span.part-title, aside .page-navigation li .fake-link:focus span.part-title, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel:focus span.part-title, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel:focus span.part-title, aside .page-navigation li .link-text:focus span.part-title, aside .page-navigation li a:hover span.part-description, aside .page-navigation li .fake-link:hover span.part-description, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel:hover span.part-description, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel:hover span.part-description, aside .page-navigation li .link-text:hover span.part-description, aside .page-navigation li a:focus span.part-description, aside .page-navigation li .fake-link:focus span.part-description, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel:focus span.part-description, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel:focus span.part-description, aside .page-navigation li .link-text:focus span.part-description {
+  color: #2e8aca;
+}
+/* line 115, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li span.part-number {
+  display: none;
+  width: 1.75em;
+}
+/* line 126, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li span.part-label, aside .page-navigation li span.part-title {
+  line-height: 1.5;
+  display: inline;
+}
+/* line 131, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li span.part-label {
+  color: #bfc1c3;
+  padding: 0 0.5em 0 0;
+}
+/* line 136, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li span.part-description {
+  line-height: 1.25;
+  display: block;
+  clear: left;
+}
+/* line 142, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li span.part-title {
+  color: #2E3191;
+  text-decoration: underline;
+  line-height: 1.5;
+}
+/* line 149, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li.active {
+  padding: 0.25em 0.25em 0.25em 0;
+}
+/* line 152, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li.active span.part-number {
+  padding: 0;
+}
+/* line 156, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation li.active span.part-title {
+  color: #bfc1c3;
+  text-decoration: none;
+}
+@media (max-width: 640px) {
+  /* line 71, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 2.36842;
+    font-weight: 400;
+    text-transform: none;
+  }
+  /* line 163, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li.active {
+    padding: 0;
+  }
+  /* line 169, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li span, aside .page-navigation li a, aside .page-navigation li .fake-link, aside .page-navigation li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content aside .page-navigation li .dialog-cancel, aside .page-navigation li .link-text {
+    margin: 0 -1em 0 -2.25em;
+    padding: 0em 1em 0.75em 2.75em;
+  }
+  /* line 174, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li span {
+    display: block;
+  }
+  /* line 178, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li span.part-title, aside .page-navigation li span.part-label {
+    display: inline;
+  }
+  /* line 182, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li span.part-label {
+    padding-right: 1em;
+  }
+}
+@media (max-width: 640px) and (max-width: 640px) {
+  /* line 71, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation li {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 189, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation ol[start] li {
+  margin-left: 2.25em;
+}
+@media screen and (min-width: 640px) {
+  /* line 189, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation ol[start] li {
+    margin-left: 1.8em;
+  }
+}
+
+/* line 197, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation-open {
+  border-bottom: solid 1px #bfc1c3;
+}
+/* line 199, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation-open ol {
+  position: static;
+  left: auto;
+}
+
+/* line 205, ../../../assets/stylesheets/modules/_overview_links.scss */
+aside .page-navigation-closed {
+  border-bottom: none;
+}
+@media (max-width: 640px) {
+  /* line 208, ../../../assets/stylesheets/modules/_overview_links.scss */
+  aside .page-navigation-closed ol {
+    position: absolute;
+    left: -9999em;
+  }
+}
+
+/* guides pagination */
+/* line 216, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination {
+  display: block;
+  margin: 4em 0 0 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+@media (max-width: 640px) {
+  /* line 216, ../../../assets/stylesheets/modules/_overview_links.scss */
+  .pagination {
+    margin: 2em 0 0 0;
+  }
+}
+/* line 226, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 231, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  float: left;
+  list-style: none;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  width: 49%;
+}
+@media (max-width: 640px) {
+  /* line 231, ../../../assets/stylesheets/modules/_overview_links.scss */
+  .pagination li {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 240, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li a, .pagination li .fake-link, .pagination li .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .pagination li .dialog-cancel, .pagination li .link-text {
+  background-color: transparent;
+  display: block;
+  color: #005ea5;
+  text-decoration: none;
+}
+/* line 251, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li a:hover, .pagination li .fake-link:hover, .pagination li .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content .pagination li .dialog-cancel:hover, .pagination li .link-text:hover, .pagination li a:active, .pagination li .fake-link:active, .pagination li .js-enabled .identity-evidence-content .dialog-cancel:active, .js-enabled .identity-evidence-content .pagination li .dialog-cancel:active, .pagination li .link-text:active {
+  background-color: #f8f8f8;
+}
+/* line 255, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li a .pagination-label, .pagination li .fake-link .pagination-label, .pagination li .js-enabled .identity-evidence-content .dialog-cancel .pagination-label, .js-enabled .identity-evidence-content .pagination li .dialog-cancel .pagination-label, .pagination li .link-text .pagination-label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 27px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-transform: none;
+  margin-bottom: 0.1em;
+  display: block;
+}
+@media (max-width: 640px) {
+  /* line 255, ../../../assets/stylesheets/modules/_overview_links.scss */
+  .pagination li a .pagination-label, .pagination li .fake-link .pagination-label, .pagination li .js-enabled .identity-evidence-content .dialog-cancel .pagination-label, .js-enabled .identity-evidence-content .pagination li .dialog-cancel .pagination-label, .pagination li .link-text .pagination-label {
+    font-size: 18px;
+    line-height: 1.11111;
+  }
+}
+/* line 261, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li a .pagination-part-title, .pagination li .fake-link .pagination-part-title, .pagination li .js-enabled .identity-evidence-content .dialog-cancel .pagination-part-title, .js-enabled .identity-evidence-content .pagination li .dialog-cancel .pagination-part-title, .pagination li .link-text .pagination-part-title {
+  text-decoration: underline;
+}
+/* line 266, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li.next {
+  float: right;
+  text-align: right;
+}
+/* line 271, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li.next a:before, .pagination li.next .fake-link:before, .pagination li.next .js-enabled .identity-evidence-content .dialog-cancel:before, .js-enabled .identity-evidence-content .pagination li.next .dialog-cancel:before, .pagination li.next .link-text:before {
+  background: transparent url("/assets/images/govuk/overview/arrow-sprite.png") no-repeat -102px -11px;
+  margin: -4px -32px 0 0;
+  display: block;
+  float: right;
+  width: 30px;
+  height: 38px;
+  content: " ";
+}
+/* line 281, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li.previous a:before, .pagination li.previous .fake-link:before, .pagination li.previous .js-enabled .identity-evidence-content .dialog-cancel:before, .js-enabled .identity-evidence-content .pagination li.previous .dialog-cancel:before, .pagination li.previous .link-text:before {
+  background: transparent url("/assets/images/govuk/overview/arrow-sprite.png") no-repeat -20px -11px;
+  margin: -4px 0 0 -32px;
+  display: block;
+  float: left;
+  width: 30px;
+  height: 38px;
+  content: " ";
+}
+/* line 291, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li.previous {
+  float: left;
+  text-align: left;
+}
+/* line 296, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li.previous a, .pagination li.previous .fake-link, .pagination li.previous .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .pagination li.previous .dialog-cancel, .pagination li.previous .link-text {
+  padding: 0.75em 0 0.75em 3em;
+}
+/* line 300, ../../../assets/stylesheets/modules/_overview_links.scss */
+.pagination li.next a, .pagination li.next .fake-link, .pagination li.next .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .pagination li.next .dialog-cancel, .pagination li.next .link-text {
+  padding: 0.75em 3em 0.75em 0;
+}
+@media (max-width: 640px) {
+  /* line 306, ../../../assets/stylesheets/modules/_overview_links.scss */
+  .pagination li.previous, .pagination li.next {
+    float: none;
+    width: 100%;
+  }
+  /* line 311, ../../../assets/stylesheets/modules/_overview_links.scss */
+  .pagination li.next a, .pagination li.next .fake-link, .pagination li.next .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .pagination li.next .dialog-cancel, .pagination li.next .link-text {
+    text-align: right;
+  }
+}
+
+/* line 3, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation header.page-header div {
+  display: none;
+}
+/* line 7, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation .article-container {
+  max-width: none;
+  margin: 0;
+}
+/* line 12, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation .text-wrap {
+  width: 600px;
+}
+/* line 16, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation h1 {
+  font-size: 26px;
+  margin: 0 0 1em 0;
+}
+/* line 21, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation .slide {
+  position: relative;
+  white-space: normal;
+  padding: 50px 100px 50px 100px;
+  min-height: 400px;
+  vertical-align: top;
+  color: #fff;
+  font-size: 22px;
+  margin: 30px 0 0 0;
+  background: #28A197;
+}
+/* line 33, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation .slide p, .confirmation .slide .label-help, .confirmation .slide .submit, .confirmation .slide .application-notice .title, .application-notice .confirmation .slide .title, .confirmation .slide details summary, details .confirmation .slide summary, .confirmation .slide .details .summary, .details .confirmation .slide .summary {
+  font-size: 22px;
+}
+/* line 37, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation .slide .tick-face {
+  position: absolute;
+  right: 120px;
+  top: 60px;
+}
+/* line 43, ../../../assets/stylesheets/pages/confirmation.scss */
+.confirmation .slide .button {
+  display: inline-block;
+  width: 230px;
+  padding: 8px 6px 6px 6px;
+  text-align: center;
+  border: 1px solid #fff;
+  text-decoration: none;
+  background: #fff;
+  color: #28A197;
+  font-weight: bold;
+  margin: 0 20px 0 0;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* line 1, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.intro-text {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+/* line 4, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.intro-text p, .intro-text .label-help, .intro-text .submit, .intro-text .application-notice .title, .application-notice .intro-text .title, .intro-text details summary, details .intro-text summary, .intro-text .details .summary, .details .intro-text .summary {
+  font-size: 1.25em;
+  line-height: 1.3;
+  margin: 0;
+}
+@media screen and (min-width: 641px) {
+  /* line 4, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .intro-text p, .intro-text .label-help, .intro-text .submit, .intro-text .application-notice .title, .application-notice .intro-text .title, .intro-text details summary, details .intro-text summary, .intro-text .details .summary, .details .intro-text .summary {
+    font-size: 1.5em;
+  }
+}
+
+/* line 14, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.services-icons {
+  height: 72px;
+  margin: -0.3125em 0 0 0;
+  padding: 0 0 0 0;
+  background: url("/assets/images/govuk/sign-in/icons-transaction.gif") no-repeat 50% 0;
+  background-size: 100%;
+}
+@media screen and (min-width: 400px) {
+  /* line 14, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .services-icons {
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+    background-size: auto;
+    background-position: -20px 0;
+  }
+}
+@media screen and (min-width: 769px) {
+  /* line 14, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .services-icons {
+    background-repeat: repeat-x;
+  }
+}
+
+/* line 32, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-signin-container {
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 641px) {
+  /* line 35, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .register-signin-container .register-box, .register-signin-container .signin {
+    width: 48%;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 641px) {
+  /* line 43, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .register-signin-container .register-box {
+    border-top: 0;
+    margin-right: 4%;
+  }
+}
+
+/* line 51, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box, .signin {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 53, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box h3, .signin h3 {
+  line-height: 1.3;
+  margin-bottom: 0.75em;
+}
+@media screen and (min-width: 641px) {
+  /* line 53, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .register-box h3, .signin h3 {
+    margin-top: 0;
+  }
+}
+/* line 59, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box h3 span, .signin h3 span {
+  font-weight: normal;
+  display: block;
+}
+/* line 64, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box .get-started, .signin .get-started {
+  margin-top: 0;
+}
+/* line 67, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box p, .register-box .label-help, .register-box .submit, .register-box .application-notice .title, .application-notice .register-box .title, .register-box details summary, details .register-box summary, .register-box .details .summary, .details .register-box .summary, .signin p, .signin .label-help, .signin .submit, .signin .application-notice .title, .application-notice .signin .title, .signin details summary, details .signin summary, .signin .details .summary, .details .signin .summary {
+  margin-top: 0;
+}
+/* line 70, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box .button, .signin .button {
+  display: block;
+}
+
+/* line 75, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.register-box {
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 641px) {
+  /* line 75, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .register-box {
+    border-top: 0;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  /* line 82, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .signin {
+    border-top: 0;
+  }
+}
+/* line 86, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-forms {
+  margin: 0 0 0.75em 0;
+  padding: 0 0 0.25em 0;
+}
+/* line 89, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.js-enabled .register-signin-container .signin .idp-forms {
+  display: none;
+}
+/* line 92, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-forms:hover {
+  -webkit-transition: all 0.15s ease-in-out 0s;
+  -moz-transition: all 0.15s ease-in-out 0s;
+  -ms-transition: all 0.15s ease-in-out 0s;
+  -o-transition: all 0.15s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
+}
+/* line 96, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-option {
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+/* line 99, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-option button {
+  background-color: #f9fafa;
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  padding: 0.35em 0.5em 0.15em 0.5em;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 2px 0 #d0d3d6;
+  -moz-box-shadow: 0 2px 0 #d0d3d6;
+  box-shadow: 0 2px 0 #d0d3d6;
+  font-size: 1em;
+  line-height: 1.25;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  color: #0b0c0c;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 54px;
+  padding: 6px 1.7em 0 0.55em;
+  background-position: 13px 50%;
+  background-repeat: no-repeat;
+  text-align: left;
+}
+/* line 51, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button:visited {
+  background-color: #f9fafa;
+}
+/* line 55, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button:hover, .signin .idp-option button:focus {
+  background-color: #ecedee;
+}
+/* line 58, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button:active {
+  top: 2px;
+  -webkit-box-shadow: 0 0 0 #f9fafa;
+  -moz-box-shadow: 0 0 0 #f9fafa;
+  box-shadow: 0 0 0 #f9fafa;
+}
+/* line 66, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button.disabled, .signin .idp-option button[disabled="disabled"], .signin .idp-option button[disabled] {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+/* line 68, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button.disabled:hover, .signin .idp-option button[disabled="disabled"]:hover, .signin .idp-option button[disabled]:hover {
+  cursor: default;
+  background-color: #f9fafa;
+}
+/* line 72, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button.disabled:active, .signin .idp-option button[disabled="disabled"]:active, .signin .idp-option button[disabled]:active {
+  top: 0;
+  -webkit-box-shadow: 0 2px 0 #d0d3d6;
+  -moz-box-shadow: 0 2px 0 #d0d3d6;
+  box-shadow: 0 2px 0 #d0d3d6;
+}
+/* line 95, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button:link, .signin .idp-option button:hover, .signin .idp-option button:focus, .signin .idp-option button:visited {
+  color: #0b0c0c;
+}
+/* line 102, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button:before {
+  content: "";
+  height: 110%;
+  width: 100%;
+  display: block;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 112, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button:active:before {
+  top: -10%;
+  height: 120%;
+}
+/* line 125, ../../../assets/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss */
+.signin .idp-option button[rel="external"]:after {
+  display: none;
+  content: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media (max-width: 640px) {
+  /* line 99, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .signin .idp-option button {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 110, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-option button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 30px;
+  height: 100%;
+  background: url("/assets/images/govuk/icon-pointer-inverse.png") 100% 50% no-repeat;
+}
+/* line 120, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-option button::-moz-focus-inner {
+  border: 0;
+}
+/* line 123, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.signin .idp-option button img {
+  height: 40px;
+}
+
+/* line 130, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.government-gateway {
+  margin: 0 0 0 0;
+  padding: 25px 10px 10px 10px;
+}
+/* line 133, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.government-gateway p, .government-gateway .label-help, .government-gateway .submit, .government-gateway .application-notice .title, .application-notice .government-gateway .title, .government-gateway details summary, details .government-gateway summary, .government-gateway .details .summary, .details .government-gateway .summary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  margin: 0 0 0.5em 0;
+  line-height: 1.2;
+}
+@media (max-width: 640px) {
+  /* line 133, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+  .government-gateway p, .government-gateway .label-help, .government-gateway .submit, .government-gateway .application-notice .title, .application-notice .government-gateway .title, .government-gateway details summary, details .government-gateway summary, .government-gateway .details .summary, .details .government-gateway .summary {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+/* line 137, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.government-gateway p:last-child, .government-gateway .label-help:last-child, .government-gateway .submit:last-child, .government-gateway .application-notice .title:last-child, .application-notice .government-gateway .title:last-child, .government-gateway details summary:last-child, details .government-gateway summary:last-child, .government-gateway .details .summary:last-child, .details .government-gateway .summary:last-child {
+  margin: 0;
+}
+
+/* line 143, ../../../assets/stylesheets/pages/_register-sign-in.scss */
+.service-name {
+  display: inline-block;
+  font-weight: bold;
+}
+
+/* line 1, ../../../assets/stylesheets/pages/_about.scss */
+.about-logo {
+  line-height: 1;
+  margin: 0;
+}
+/* line 4, ../../../assets/stylesheets/pages/_about.scss */
+.about-logo img {
+  height: 50px;
+}
+
+/* line 14, ../../../assets/stylesheets/pages/_about.scss */
+.company-quote .from-company p, .company-quote .from-company .label-help, .company-quote .from-company .submit, .company-quote .from-company .application-notice .title, .application-notice .company-quote .from-company .title, .company-quote .from-company details summary, details .company-quote .from-company summary, .company-quote .from-company .details .summary, .details .company-quote .from-company .summary {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 300;
+  text-transform: none;
+  color: #6f777b;
+  margin-bottom: 0;
+}
+@media (max-width: 640px) {
+  /* line 14, ../../../assets/stylesheets/pages/_about.scss */
+  .company-quote .from-company p, .company-quote .from-company .label-help, .company-quote .from-company .submit, .company-quote .from-company .application-notice .title, .application-notice .company-quote .from-company .title, .company-quote .from-company details summary, details .company-quote .from-company summary, .company-quote .from-company .details .summary, .details .company-quote .from-company .summary {
+    font-size: 14px;
+    line-height: 1.14286;
+  }
+}
+
+/* line 24, ../../../assets/stylesheets/pages/_about.scss */
+.breadcrumb {
+  margin: 0;
+  list-style: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 32, ../../../assets/stylesheets/pages/_about.scss */
+.breadcrumb > li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  text-shadow: 0 1px 0 white;
+}
+
+/* line 39, ../../../assets/stylesheets/pages/_about.scss */
+.breadcrumb a, .breadcrumb .fake-link, .breadcrumb .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .breadcrumb .dialog-cancel, .breadcrumb .link-text {
+  color: #0b0c0c;
+}
+
+/* line 43, ../../../assets/stylesheets/pages/_about.scss */
+.breadcrumb ol {
+  padding-left: 30px;
+  margin-top: 0;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* line 6, ../../../assets/stylesheets/modules/_message_box.scss */
+html, body {
+  overflow: auto;
+  height: auto;
+}
+
+/* line 15, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .message-box-on body, .js-enabled .message-box-on {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* line 22, ../../../assets/stylesheets/modules/_message_box.scss */
+.fake-link, .js-enabled .identity-evidence-content .dialog-cancel {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@font-face {
+  font-family: GDS-Logo;
+  src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* Cross-browser shims
+
+  Ways of normalising properties across browsers.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/* Usage:
+   @include inline-block
+
+   or
+
+   @include inline-block("250px")
+
+   which gives a min-height to the inline-block elements.
+*/
+/* Contain floats usage:
+
+   .this-has-floated-children {
+     @extend %contain-floats;
+   }
+
+*/
+/* CSS 3 Mixins
+
+  Add them as you need them. This should let us manage vendor prefixes in one place.
+ */
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+/*
+
+Mixin and defaults for making buttons on GOV.UK services.
+
+For guidance, see: https://www.gov.uk/service-manual/design-and-content/resources/buttons.html
+
+Example usage:
+
+.button{
+  @include button;
+}
+.button-secondary{
+  @include button($grey-3);
+}
+.button-warning{
+  @include button($red);
+}
+
+*/
+/* Player overrides */
+/* line 6, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence-content {
+  overflow: auto;
+  height: auto;
+}
+/* line 11, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence-content .message-dialog-box .dialog-close {
+  display: none;
+}
+/* line 14, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.message-box-on .identity-evidence-content .message-dialog-box {
+  margin: 0 0 2em 0;
+  padding: 20px;
+  background: #f9fafa;
+  border-bottom: 2px solid #d0d3d6;
+}
+/* line 21, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .message-dialog-box {
+  margin: auto;
+  padding: auto;
+  background: transparent;
+  border-bottom: none;
+}
+/* line 35, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .identity-evidence-content .message-overlay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0);
+}
+/* line 48, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .identity-evidence-content .message-overlay *, .js-enabled .identity-evidence-content .message-overlay {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 64, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .identity-evidence-content .message-dialog-box {
+  -webkit-overflow-scrolling: touch;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 201;
+  width: 100%;
+  height: 100%;
+  padding: 10px 25px 25px 25px;
+  background-color: #fff;
+  overflow: auto;
+}
+@media screen and (min-width: 641px) {
+  /* line 64, ../../../assets/stylesheets/modules/_message_box.scss */
+  .js-enabled .identity-evidence-content .message-dialog-box {
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -275px;
+    max-width: 550px;
+    max-height: 450px;
+    height: auto;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
+    overflow: auto;
+  }
+}
+/* line 104, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .identity-evidence-content p, .js-enabled .identity-evidence-content .label-help, .js-enabled .identity-evidence-content .submit, .js-enabled .identity-evidence-content .application-notice .title, .application-notice .js-enabled .identity-evidence-content .title, .js-enabled .identity-evidence-content details summary, details .js-enabled .identity-evidence-content summary, .js-enabled .identity-evidence-content .details .summary, .details .js-enabled .identity-evidence-content .summary {
+  line-height: 1.2;
+  margin: 0 0 1.25em 0;
+}
+/* line 31, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .body-copy {
+  padding-top: 0.7em;
+}
+/* line 33, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .body-copy p, .js-enabled .identity-evidence-content .body-copy .label-help, .js-enabled .identity-evidence-content .body-copy .submit, .js-enabled .identity-evidence-content .body-copy .application-notice .title, .application-notice .js-enabled .identity-evidence-content .body-copy .title, .js-enabled .identity-evidence-content .body-copy details summary, details .js-enabled .identity-evidence-content .body-copy summary, .js-enabled .identity-evidence-content .body-copy .details .summary, .details .js-enabled .identity-evidence-content .body-copy .summary {
+  margin: 1.125em 0 0.9375em 0;
+}
+/* line 37, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content h2, .js-enabled .identity-evidence-content legend {
+  line-height: 1.2;
+  margin: 0 100px 0.5em 0;
+  padding-top: 0;
+}
+/* line 42, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content h3 {
+  margin: 0 0 0.9375em 0;
+  font-weight: normal;
+}
+/* line 46, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .dialog-cancel {
+  line-height: 1;
+  text-align: right;
+}
+@media screen and (min-width: 640px) {
+  /* line 46, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .js-enabled .identity-evidence-content .dialog-cancel {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    width: 100px;
+    height: 30px;
+    padding: 15px 25px;
+  }
+}
+/* line 57, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .dialog-cancel:hover {
+  text-decoration: underline;
+}
+/* line 61, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .info {
+  overflow: auto;
+  max-height: 255px;
+  margin: 0 0 1em 0;
+  padding: 15px 35px;
+  background: #ffebf0;
+}
+/* line 67, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .info ul, .js-enabled .identity-evidence-content .info li {
+  margin: 0;
+  padding: 0;
+}
+/* line 71, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .info li {
+  font-size: 98%;
+}
+/* line 76, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .actions .button {
+  margin-bottom: 0.3em;
+  padding: 0.5em 2.2em 0.5em 0.8em;
+  text-align: left;
+}
+/* line 81, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.js-enabled .identity-evidence-content .actions .destination {
+  margin: 0.5em 0 0 0;
+  display: block;
+  font-size: 14px;
+  color: rgba(46, 49, 51, 0.7);
+}
+/* line 113, ../../../assets/stylesheets/modules/_message_box.scss */
+.identity-evidence-content .dialog-cancel {
+  display: none;
+}
+/* line 115, ../../../assets/stylesheets/modules/_message_box.scss */
+.js-enabled .identity-evidence-content .dialog-cancel {
+  display: block;
+}
+/* line 123, ../../../assets/stylesheets/modules/_message_box.scss */
+.message-box-on .identity-evidence-content .message-overlay {
+  pointer-events: auto;
+  display: block;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+}
+/* line 130, ../../../assets/stylesheets/modules/_message_box.scss */
+.message-box-on .identity-evidence-content .message-dialog-box {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 92, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.disabled-container .warning {
+  width: 30px;
+  height: 30px;
+  line-height: 1.5625em;
+  margin-right: 10px;
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  background: #666;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+}
+
+/* line 111, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .application-notice h4 {
+  margin-top: 0.5em;
+}
+/* line 116, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .error-notice p, .identity-evidence .error-notice .label-help, .identity-evidence .error-notice .submit, .identity-evidence .error-notice .application-notice .title, .application-notice .identity-evidence .error-notice .title, .identity-evidence .error-notice details summary, details .identity-evidence .error-notice summary, .identity-evidence .error-notice .details .summary, .details .identity-evidence .error-notice .summary, .identity-evidence .success-notice p, .identity-evidence .success-notice .label-help, .identity-evidence .success-notice .submit, .identity-evidence .success-notice .application-notice .title, .application-notice .identity-evidence .success-notice .title, .identity-evidence .success-notice details summary, details .identity-evidence .success-notice summary, .identity-evidence .success-notice .details .summary, .details .identity-evidence .success-notice .summary {
+  margin: 0;
+}
+/* line 121, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .coming-soon h4 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+}
+@media (max-width: 640px) {
+  /* line 121, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .identity-evidence .coming-soon h4 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 127, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .article-container {
+  max-width: none;
+}
+@media screen and (min-width: 800px) {
+  /* line 127, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .identity-evidence .article-container {
+    margin-right: 0;
+  }
+}
+/* line 137, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .loading-cover {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: white url("/assets/images/ajax-loader.gif") no-repeat 50% 50%;
+}
+/* line 149, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .loading-cover.on {
+  visibility: visible;
+  z-index: 101;
+}
+/* line 155, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .disabled {
+  opacity: 0.3;
+}
+/* line 159, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .intro {
+  max-width: 465px;
+  padding-top: 0;
+  padding-bottom: 2em;
+}
+@media screen and (min-width: 800px) {
+  /* line 159, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .identity-evidence .intro {
+    max-width: none;
+    margin-right: 22.25em;
+  }
+}
+/* line 184, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .company-selector h3 {
+  margin-bottom: 1.25em;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+/* line 191, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .number {
+  display: block;
+  line-height: 1.3;
+  font-weight: normal;
+  font-size: 90%;
+  color: #6F777B;
+}
+/* line 199, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles-container {
+  margin: 0;
+}
+@media screen and (min-width: 641px) {
+  /* line 199, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .identity-evidence .evidence-toggles-container {
+    width: 44%;
+    float: left;
+    margin-right: 12%;
+  }
+}
+/* line 206, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles-container form {
+  margin-bottom: 1.5em;
+}
+/* line 212, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles fieldset {
+  margin: 0;
+}
+/* line 215, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 3px;
+}
+/* line 221, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles label {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 0 0 30px;
+}
+@media (max-width: 640px) {
+  /* line 221, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .identity-evidence .evidence-toggles label {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+/* line 230, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles label:hover {
+  cursor: pointer;
+}
+/* line 233, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles label em {
+  display: block;
+  line-height: 1.4;
+  font-size: 90%;
+  font-style: normal;
+}
+/* line 240, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles .group-label {
+  margin: 0 0 0.625em 0;
+  padding-bottom: 0.125em;
+  padding-left: 0;
+  border-bottom: 2px solid #0b0c0c;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+}
+/* line 248, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles .group-label span {
+  font-weight: normal;
+  font-size: 90%;
+}
+/* line 252, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles .group-label input {
+  top: 1px;
+}
+/* line 256, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 261, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .evidence-toggles li {
+  margin: 0 0 1.125em 0;
+  padding: 0;
+}
+/* line 267, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container {
+  position: relative;
+}
+/* line 270, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container .options {
+  position: relative;
+}
+/* line 274, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 3px 0 0 0;
+}
+/* line 282, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container .summary {
+  display: none;
+}
+/* line 285, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container img {
+  max-height: 50px;
+  height: 50px;
+}
+/* line 289, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container li {
+  -webkit-transition: all 0.25s ease-in-out 0s;
+  -moz-transition: all 0.25s ease-in-out 0s;
+  -ms-transition: all 0.25s ease-in-out 0s;
+  -o-transition: all 0.25s ease-in-out 0s;
+  transition: all 0.25s ease-in-out 0s;
+  width: 100%;
+  margin: 0 0 16px 0;
+}
+/* line 294, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container a, .identity-evidence .lists-container .fake-link, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel, .identity-evidence .lists-container .link-text {
+  display: block;
+  position: relative;
+  z-index: 10;
+  top: -3px;
+  min-height: 65px;
+  padding: 10px 10px 0 15px;
+  border: 1px solid #dee0e2;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #b5babe;
+  overflow: hidden;
+}
+/* line 307, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container a:after, .identity-evidence .lists-container .fake-link:after, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:after, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:after, .identity-evidence .lists-container .link-text:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 30px;
+  height: 100%;
+  background: url("/assets/images/govuk/icon-pointer-inverse.png") 0 50% no-repeat;
+}
+/* line 317, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container a:hover, .identity-evidence .lists-container .fake-link:hover, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:hover, .identity-evidence .lists-container .link-text:hover {
+  box-shadow: 0 1px 0 #a8adb2;
+}
+/* line 320, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container a:hover, .identity-evidence .lists-container .fake-link:hover, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:hover, .identity-evidence .lists-container .link-text:hover, .identity-evidence .lists-container a:active, .identity-evidence .lists-container .fake-link:active, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:active, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:active, .identity-evidence .lists-container .link-text:active {
+  background-color: #f9fafa;
+  color: #fff;
+}
+/* line 323, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container a:hover img, .identity-evidence .lists-container .fake-link:hover img, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:hover img, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:hover img, .identity-evidence .lists-container .link-text:hover img, .identity-evidence .lists-container a:hover, .identity-evidence .lists-container .fake-link:hover, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:hover, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:hover, .identity-evidence .lists-container .link-text:hover, .identity-evidence .lists-container a:active img, .identity-evidence .lists-container .fake-link:active img, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:active img, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:active img, .identity-evidence .lists-container .link-text:active img, .identity-evidence .lists-container a:active, .identity-evidence .lists-container .fake-link:active, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:active, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:active, .identity-evidence .lists-container .link-text:active {
+  cursor: pointer;
+}
+/* line 327, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+.identity-evidence .lists-container a:active, .identity-evidence .lists-container .fake-link:active, .identity-evidence .lists-container .js-enabled .identity-evidence-content .dialog-cancel:active, .js-enabled .identity-evidence-content .identity-evidence .lists-container .dialog-cancel:active, .identity-evidence .lists-container .link-text:active {
+  top: 0;
+  z-index: 1000;
+  box-shadow: none;
+  overflow: hidden;
+}
+@media screen and (min-width: 641px) {
+  /* line 336, ../../../assets/stylesheets/pages/_identity-evidence.scss */
+  .identity-evidence .company-list {
+    width: 44%;
+    float: left;
+  }
+}
+
+/* line 2, ../../../assets/stylesheets/pages/_saml.scss */
+.js-enabled body.saml {
+  display: none;
+}
+
+/* line 2, ../../../assets/stylesheets/pages/_error.scss */
+.idp_back_error .button {
+  margin-left: 30px;
+}
+/* line 5, ../../../assets/stylesheets/pages/_error.scss */
+.idp_back_error .continue {
+  margin-top: 50px;
+}
+/* line 8, ../../../assets/stylesheets/pages/_error.scss */
+.idp_back_error .article-container {
+  min-height: 0px;
+}
