@@ -38,11 +38,10 @@ IF 3  >>>  feus.html {FEUS flow}
 
 				<h1 class="form-title heading-large">Which of the following best describes your condition?</h1>
 
-				<form action="/ep-flowq2" method="get" class="form" data-parsley-validate>
-					{{#vars}}
-					<input type="hidden" name="q1answer" value="{{q1answer}}">
-					{{/vars}}
+				<form action="/ep-flow" method="get" class="form" data-parsley-validate>
+				<input type="hidden" name="question" value="q2">
 					
+						
 					<div class="form-group">
 						<fieldset>
 							<legend class="visuallyhidden">

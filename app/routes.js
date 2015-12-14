@@ -31,7 +31,191 @@ router.get('/basic-flow', function (req, res) {
 
 
 
+/* - - - - - - - - - - - */
+/* Generic router script */
+router.get('/ep-flow', function (req, res) {
 
+	// get the next page
+    var question = req.query.question;
+
+    // as long as it's not trying to return from a check/change
+    //if(/chexx/.test(next)){
+    //  var next = 'vm-acqpp/vm-acquire-check';
+    //}
+
+    // get all the other variables from the page
+    var pagevars = req.query;
+
+    // get the older variables from the session
+    var objectMerge = require('object-merge');
+    var sess = req.session;
+    sessvars = sess.vars;
+
+
+    // merge the sets of variables from
+    // the page and the session
+    var merged = objectMerge(sessvars, pagevars);
+    sess.vars = merged;
+
+
+
+	switch(question)
+    {
+    
+    case "q1":
+    // Condition
+    var q1answer = req.query.q1answer;
+
+    if (q1answer == "epilepsy") {var next = 'q2';} else {var next = 'non-notifiable';}
+    break;
+
+
+    case "q2":
+    // Condition description 
+    var q2answer = req.query.q2answer;
+
+    if (q2answer == "Epilepsy") {var next = 'q3';}
+    else if (q2answer == "Multiple") {var next = 'q3';}
+    else if (q2answer == "First") {var next = 'feus';}
+    break;
+
+
+    case "q3":
+    // Seizure type
+	var q3answer = req.query.q3answer;
+
+	if (q3answer == "Asleep") {var next = 'q4';}
+	else if (q3answer == "Awake") {var next = 'awake';}
+	else if (q3answer == "Mixed") {var next = 'mixed';}
+	break;
+
+
+    case "q4":
+    // seizure-cause 
+    var q4answer = req.query.q4answer;
+
+	if (q4answer == "have") {var next = 'q5';}
+	else if (q4answer == "have not") {var next ='verify/verify-1';}
+	else {var next = 'error';}
+	break;
+
+
+    case "q5":
+    // alcohol-dependence 
+	var next = 'q6';
+	break;
+
+
+    case "q6":
+    // drug-dependence 
+	var next = 'verify/verify-1';
+	break;
+
+
+    case "q7":
+    // CONFIRM ADDRESS 
+	var q7answer = req.query.q7answer;
+
+	if (q7answer == "Yes") {var next = 'q8';}
+	else {var next ='q7a';}
+	break;
+
+
+    case "q7a":
+    // CHANGE ADDRESS 
+	var next = 'q7b'
+	break;
+
+
+    case "q7b":
+    // EMAIL CONFIRMATION 
+	var next = 'epilepsy/q8';
+	break;
+
+
+    case "q8":
+    // first-seizure-date
+    var moment = require('moment');
+
+	var day = req.query.day;
+	var month = req.query.month;
+	var year = req.query.year;
+	var date = moment(year + '-' + month + '-' +  day).format("D MMMM YYYY");
+	var q8answer = date;
+
+	var now = moment(new Date());
+	var today = now.format("D MMMM YYYY");
+
+	var fiveago = moment().subtract(5, "years").format("D MMMM YYYY");
+	var oneago = moment().subtract(1, "years").format("D MMMM YYYY");
+
+	// If less than 1 year ago
+	if (moment(q8answer).isAfter(oneago)) {
+		var next = 'q17a';
+
+	// If more than 1 year ago
+	} else {var next = '/q9';}
+    break;
+
+
+    case "q9":
+    // recent-seizure-date
+    var moment = require('moment');
+
+	var day = req.query.day;
+	var month = req.query.month;
+	var year = req.query.year;
+	var date = moment(year + '-' + month + '-' +  day).format("D MMMM YYYY");
+	var q9answer = date;
+
+	var now = moment(new Date());
+	var today = now.format("D MMMM YYYY");
+
+	var fiveago = moment().subtract(5, "years").format("D MMMM YYYY");
+	var oneago = moment().subtract(1, "years").format("D MMMM YYYY");
+
+	// If less than one year ago
+	if (moment(q9answer).isAfter(oneago)) {
+		var next = 'q17a';
+	
+	// If more than 1 less than 5 years
+	} else if (moment(q9answer).isAfter(fiveago)) {
+		var next = 'q11';
+	
+	// If more than 5 years
+	} else {var next = 'q10';}
+
+    break;
+
+
+    case "q10":
+    // other events
+    var q10answer = req.query.q10answer;
+	
+	if (q10answer == "have") {
+		var next = 'blackout';
+	}
+	else if (q10answer == "have not") {
+		var next = 'q11';
+	}
+    break;
+
+
+    case "q8":
+    // first-seizure-date
+
+    break;
+
+
+    default:
+      // code if nothing works
+    }
+
+
+
+
+	res.render('epilepsy/' + next, {'vars' : merged, });
+    });
 
 
 /*  - - - - - - - - - - - - - -  */

@@ -23,6 +23,13 @@ if (env === 'production' && useAuth === 'true'){
     app.use(utils.basicAuth(username, password));
 }
 
+
+// Sessions stuff
+var session = require('express-session')
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+// Moment to grab the date and do that in places
+var moment = require("moment");
+
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
 app.set('view engine', 'html');

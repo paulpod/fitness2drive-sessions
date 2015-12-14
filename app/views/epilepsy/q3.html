@@ -39,11 +39,10 @@ OPT 3 >>> mixed.html {MIXED flow}
 
 				<h1 class="form-title heading-large">Which of the following seizures have you had?</h1>
 
-				<form action="/ep-flowq3" method="get" class="form" data-parsley-validate>
-					{{#vars}}
-					<input type="hidden" name="q1answer" value="{{q1answer}}">
-					<input type="hidden" name="q2answer" value="{{q2answer}}">
-					{{/vars}}
+				<form action="/ep-flow" method="get" class="form" data-parsley-validate>
+				<input type="hidden" name="question" value="q3">
+					
+					
 
 					<div class="form-group">
 						<fieldset>

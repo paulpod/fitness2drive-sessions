@@ -37,19 +37,10 @@
 
 				<h1 class="form-title heading-large">Provide the date of your first seizure</h1>
 
-				<form action="/ep-flowq8" method="get" class="form" data-parsley-validate>
-					{{#vars}}
-					<input type="hidden" name="q1answer" value="{{q1answer}}">
-					<input type="hidden" name="q2answer" value="{{q2answer}}">
-					<input type="hidden" name="q3answer" value="{{q3answer}}">
-					<input type="hidden" name="q4answer" value="{{q4answer}}">
-					<input type="hidden" name="q5answer" value="{{q5answer}}">
-					<input type="hidden" name="q6answer" value="{{q6answer}}">
-					<input type="hidden" name="q7answer" value="{{q7answer}}">
-					<input type="hidden" name="q7answerA" value="{{q7answerA}}">
-					<input type="hidden" name="q7answerA" value="{{q7answerB}}">
-					<input type="hidden" name="email" value="{{email}}">
-					{{/vars}}
+				<form action="/ep-flow" method="get" class="form" data-parsley-validate>
+				<input type="hidden" name="question" value="q8">
+					
+
 
 					<!-- First seizure date -->
 					<div class="form-group">
