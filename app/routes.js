@@ -230,7 +230,12 @@ router.get('/ep-flow', function (req, res) {
 	// !! Wayne you may need to put these new variables created after the session/vars/merge 
 	// !! directly into the session somehow...
 
-	var next = 'q12';
+	var addmed = merged.addmed;
+
+	if (addmed == "addmed") {
+		var next = 'q11a';}
+		else {var next = 'q12';}
+
     break;
 
 
