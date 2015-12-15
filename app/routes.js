@@ -64,7 +64,7 @@ router.get('/ep-flow', function (req, res) {
     
     case "q1":
     // Condition
-    var q1answer = req.query.q1answer;
+    var q1answer = merged.q1answer;
 
     if (q1answer == "epilepsy") {var next = 'q2';} else {var next = 'non-notifiable';}
     break;
@@ -72,7 +72,7 @@ router.get('/ep-flow', function (req, res) {
 
     case "q2":
     // Condition description 
-    var q2answer = req.query.q2answer;
+    var q2answer = merged.q2answer;
 
     if (q2answer == "Epilepsy") {var next = 'q3';}
     else if (q2answer == "Multiple") {var next = 'q3';}
@@ -82,7 +82,7 @@ router.get('/ep-flow', function (req, res) {
 
     case "q3":
     // Seizure type
-	var q3answer = req.query.q3answer;
+	var q3answer = merged.q3answer;
 
 	if (q3answer == "Asleep") {var next = 'q4';}
 	else if (q3answer == "Awake") {var next = 'awake';}
@@ -92,7 +92,7 @@ router.get('/ep-flow', function (req, res) {
 
     case "q4":
     // seizure-cause 
-    var q4answer = req.query.q4answer;
+    var q4answer = merged.q4answer;
 
 	if (q4answer == "have") {var next = 'q5';}
 	else if (q4answer == "have not") {var next ='verify/verify-1';}
@@ -114,7 +114,7 @@ router.get('/ep-flow', function (req, res) {
 
     case "q7":
     // CONFIRM ADDRESS 
-	var q7answer = req.query.q7answer;
+	var q7answer = merged.q7answer;
 
 	if (q7answer == "Yes") {var next = 'q8';}
 	else {var next ='q7a';}
@@ -190,7 +190,7 @@ router.get('/ep-flow', function (req, res) {
 
     case "q10":
     // other events
-    var q10answer = req.query.q10answer;
+    var q10answer = merged.q10answer;
 	
 	if (q10answer == "have") {
 		var next = 'blackout';
@@ -201,9 +201,36 @@ router.get('/ep-flow', function (req, res) {
     break;
 
 
-    case "q8":
-    // first-seizure-date
+    case "q11":
+    // other events .2
+    var moment = require('moment');
 
+	//var vars = req.query;
+	var drugname1 = merged.drugname1;
+
+	// Start date
+	var startday1 = merged.startday1;
+	var startmonth1 = merged.startmonth1;
+	var startyear1 = merged.startyear1;
+	// Combine variables into one
+	var startdate1 = moment(startyear1 + '-' + startmonth1 + '-' +  startday1).format("D MMMM YYYY");
+
+	// End date
+	var endday1 = merged.endday1;
+	var endmonth1 = merged.endmonth1;
+	var endyear1 = merged.endyear1;
+	// Combine variables into one
+	var enddate1 = moment(endyear1 + '-' + endmonth1 + '-' +  endday1).format("D MMMM YYYY");
+	
+	var q11answer = drugname1 + " " + startdate1 + " " + enddate1;
+
+	console.log(q11answer);
+	console.log(startdate1);
+	console.log(enddate1);
+	// !! Wayne you may need to put these new variables created after the session/vars/merge 
+	// !! directly into the session somehow...
+
+	var next = 'q12';
     break;
 
 

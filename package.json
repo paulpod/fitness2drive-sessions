@@ -1,6 +1,6 @@
 {
   "name": "express-prototype",
-  "description": "GOVUK prototyping app in Express",
+  "description": "GOVUK prototyping apps in Express",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -10,6 +10,7 @@
     "basic-auth": "^1.0.3",
     "body-parser": "^1.14.1",
     "consolidate": "0.x",
+    "connect-redis": "^2.3.0",
     "express": "4.13.3",
     "express-writer": "0.0.4",
     "express-session": "^1.8.1",
@@ -30,6 +31,7 @@
     "object-merge": "2.5.1",
     "node-sass": "3.3.3",
     "readdir": "0.0.6",
+    "redis": "^0.12.1",
     "serve-favicon": "2.3.0"
   }
 }

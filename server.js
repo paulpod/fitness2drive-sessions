@@ -2,6 +2,7 @@ var path  = require('path'),
     express = require('express'),
     routes = require(__dirname + '/app/routes.js'),
     favicon = require('serve-favicon'),
+    redis = require('redis'),
     app = express(),
     basicAuth = require('basic-auth'),
     bodyParser = require('body-parser'),
@@ -22,11 +23,25 @@ var path  = require('path'),
 if (env === 'production' && useAuth === 'true'){
     app.use(utils.basicAuth(username, password));
 }
-
+ 
 
 // Sessions stuff
-var session = require('express-session')
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+var session = require('express-session');
+var redisStore = require('connect-redis')(session);
+var client = redis.createClient();
+//app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+app.use(session({
+    secret: 'keyboard cat',
+    // create new redis store.
+    store: new redisStore({ host: 'localhost', port: 6379, client: client,ttl :  260}),
+    saveUninitialized: false,
+    resave: false
+}));
+
+
+
+
+
 // Moment to grab the date and do that in places
 var moment = require("moment");
 
