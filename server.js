@@ -29,7 +29,7 @@ var path  = require('path'),
 var session = require('express-session');
 var redisStore = require('connect-redis')(session);
 var client = redis.createClient();
-//app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
 app.use(session({
     secret: 'keyboard cat',
     // create new redis store.
