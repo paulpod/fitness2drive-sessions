@@ -35,13 +35,10 @@ router.get('/basic-flow', function (req, res) {
 /* Generic router script */
 router.get('/ep-flow', function (req, res) {
 
-	// get the next page
+	// get the current page
     var question = req.query.question;
 
-    // as long as it's not trying to return from a check/change
-    //if(/chexx/.test(next)){
-    //  var next = 'vm-acqpp/vm-acquire-check';
-    //}
+   
 
     // get all the other variables from the page
     var pagevars = req.query;
@@ -56,7 +53,8 @@ router.get('/ep-flow', function (req, res) {
     // the page and the session
     var merged = objectMerge(sessvars, pagevars);
     sess.vars = merged;
-
+    console.log(merged);
+    
 
 
 	switch(question)
